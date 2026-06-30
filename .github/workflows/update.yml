@@ -3,7 +3,7 @@ name: Update tomorrow stock list
 on:
   workflow_dispatch:
   schedule:
-    # 17:30 Asia/Shanghai, after the A-share close on weekdays.
+    # UTC 09:30 = 北京时间 17:30，工作日 A 股收盘后自动更新。
     - cron: "30 9 * * 1-5"
 
 permissions:
@@ -20,6 +20,10 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
+      - name: Check TUSHARE_TOKEN
+        run: test -n "$TUSHARE_TOKEN"
+        env:
+          TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
       - run: python generate.py
         env:
           TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}

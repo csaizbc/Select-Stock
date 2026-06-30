@@ -76,4 +76,4 @@ output/
 .github/workflows/update.yml
 ```
 
-把这个工程放到 GitHub 后，在仓库 Settings 里添加 `TUSHARE_TOKEN` secret，即可手动运行，或按工作日定时生成并提交新的 HTML。
+把这个工程放到 GitHub 后，在仓库 Settings 里添加 `TUSHARE_TOKEN` secret，即可手动运行，或按工作日北京时间 17:30 定时生成并提交新的 HTML。

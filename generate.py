@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+from email.utils import parsedate_to_datetime
 import json
 import os
 import re
@@ -11,6 +12,9 @@ from dataclasses import dataclass
 from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Callable, Iterable
+from urllib.error import HTTPError, URLError
+from urllib.request import Request, urlopen
+from zoneinfo import ZoneInfo
 
 import pandas as pd
 import tushare as ts
@@ -22,6 +26,12 @@ DEFAULT_INDEX_OUTPUT = ROOT / "dist" / "index.html"
 DEFAULT_DATA_OUTPUT_DIR = ROOT / "output"
 DEFAULT_CACHE_DIR = ROOT / "cache"
 LOCAL_TIMEZONE = "Asia/Shanghai"
+LOCAL_TIMEZONE_LABEL = "北京时间"
+TIME_SYNC_URLS = (
+    "https://api.github.com",
+    "https://www.baidu.com",
+    "https://www.qq.com",
+)
 MAX_SUSPEND_WINDOW = 90
 SUSPEND_WINDOWS = (20, 40, 60, 90)
 DEFAULT_AGE_DAYS = 730
@@ -57,6 +67,29 @@ def format_ymd(value: str) -> str:
 
 def today_ymd() -> str:
     return pd.Timestamp.now(tz=LOCAL_TIMEZONE).strftime("%Y%m%d")
+
+
+def current_beijing_timestamp() -> str:
+    for url in TIME_SYNC_URLS:
+        request = Request(url, method="HEAD", headers={"User-Agent": "select-stock-time-sync/1.0"})
+        try:
+            with urlopen(request, timeout=6) as response:
+                date_header = response.headers.get("Date", "")
+        except HTTPError as exc:
+            date_header = exc.headers.get("Date", "")
+        except (OSError, URLError):
+            continue
+        if not date_header:
+            continue
+        try:
+            server_time = parsedate_to_datetime(date_header)
+        except (TypeError, ValueError):
+            continue
+        beijing_time = server_time.astimezone(ZoneInfo(LOCAL_TIMEZONE))
+        return f"{beijing_time.strftime('%Y-%m-%d %H:%M:%S')} {LOCAL_TIMEZONE_LABEL}"
+
+    fallback_time = pd.Timestamp.now(tz=LOCAL_TIMEZONE).strftime("%Y-%m-%d %H:%M:%S")
+    return f"{fallback_time} {LOCAL_TIMEZONE_LABEL}（本机时间）"
 
 
 def load_env_file(path: Path) -> None:
@@ -850,7 +883,7 @@ def build_html(payload: dict) -> str:
     <div class="meta">
       <span>数据日期：<strong id="dataDate"></strong></span>
       <span>用于：<strong id="targetDate"></strong> 盘前参考</span>
-      <span>生成时间：<strong id="generatedAt"></strong></span>
+      <span>生成时间（北京时间）：<strong id="generatedAt"></strong></span>
     </div>
   </header>
   <main>
@@ -1207,7 +1240,7 @@ def build_payload(as_of_date: str | None, cache_dir: Path, refresh_industry: boo
     pro = get_tushare_pro()
     context, daily = resolve_trading_context(pro, as_of_date)
     rows = build_stock_rows(pro, context, daily, cache_dir=cache_dir, refresh_industry=refresh_industry)
-    generated_at = pd.Timestamp.now(tz=LOCAL_TIMEZONE).strftime("%Y-%m-%d %H:%M:%S %Z")
+    generated_at = current_beijing_timestamp()
     industry_names = sorted({row.get("sw_l2_display") or "未分类" for row in rows})
     return {
         "meta": {

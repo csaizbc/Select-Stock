@@ -1,5 +1,5 @@
 {
   "default_age_days": 730,
   "default_suspend_window": 60,
-  "schedule_note": "Run after A-share close, for example 17:30 Asia/Shanghai."
+  "schedule_note": "Run after A-share close, for example 17:30 北京时间."
 }
