@@ -1,0 +1,9 @@
+﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
+002829.SZ,002829,002829,星网宇达,主板,深市,主板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,20161213,3486,9.54,17.56,4.524,False,True,True,0,0,0,0,True,
+003009.SZ,003009,003009,中天火箭,主板,深市,主板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,20200925,2104,5.76,59.96,9.998,False,True,True,0,0,0,0,True,
+300722.SZ,300722,300722,新余国科,创业板,深市,创业板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,20171110,3154,8.64,22.3,4.892,False,True,True,0,0,0,0,True,
+600118.SH,600118,600118,中国卫星,主板,沪市,主板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,19970908,10522,28.81,82.05,1.271,False,True,True,0,0,0,0,True,
+600879.SH,600879,600879,航天电子,主板,沪市,主板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,19951115,11185,30.62,21.29,7.58,False,True,True,0,0,0,0,True,
+601698.SH,601698,601698,中国卫通,主板,沪市,主板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,20190628,2559,7.01,30.25,3.774,False,True,True,0,0,0,0,True,
+688282.SH,688282,688282,理工导航,科创板,沪市,科创板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,20220318,1565,4.28,58.2,3.929,False,True,True,0,0,0,0,True,
+688523.SH,688523,688523,航天环宇,科创板,沪市,科创板,801740.SI,国防军工,801741.SI,航天装备Ⅱ,航天装备Ⅱ,L,20230602,1124,3.08,52.4,4.905,False,True,True,0,0,0,0,True,
