@@ -3,14 +3,21 @@ name: Update tomorrow stock list
 on:
   workflow_dispatch:
   schedule:
-    # 临时测试：UTC 10:25 = 北京时间 18:25，用于验证 GitHub Actions schedule 派发。
-    - cron: "25 10 * * 1-5"
+    # GitHub schedule 可能延迟或丢弃，使用多个错峰时间提高触发概率。
+    # UTC 09:37/09:52/10:07 = 北京时间 17:37/17:52/18:07，工作日 A 股收盘后自动更新。
+    - cron: "37 9 * * 1-5"
+    - cron: "52 9 * * 1-5"
+    - cron: "7 10 * * 1-5"
 
 permissions:
   actions: read
   contents: write
   pages: write
   id-token: write
+
+concurrency:
+  group: update-tomorrow-stock-list
+  cancel-in-progress: false
 
 jobs:
   update:
