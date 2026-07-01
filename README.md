@@ -11,7 +11,8 @@
 - 过滤没有最新行情的股票
 - 按申万 2021 二级行业查看和筛选
 - 搜索股票代码或名称
-- 按最新交易日涨跌幅排序
+- 按最新交易日涨跌幅或最新收盘价排序
+- 查看行业涨跌图：按当前显示列表的申万二级行业平均涨跌幅从高到低排列
 - 查看通过股票、剔除股票或全部股票
 - 导出当前列表 CSV
 
@@ -65,6 +66,7 @@ output/
 - `output/default_passed_top_loss.csv`：默认通过股票跌幅前 100
 - `output/industries/`：按申万二级行业拆分的默认通过清单
 - `output/pools/`：按全部 A 股、主板、创业板、科创板、北交所、沪市、深市拆分的清单
+- `output/industry_return_summary.csv`：按申万二级行业统计的默认通过股票平均涨跌幅
 - `output/summary.json`：汇总统计
 - `output/payload.json`：HTML 使用的完整数据
 
@@ -76,4 +78,18 @@ output/
 .github/workflows/update.yml
 ```
 
-把这个工程放到 GitHub 后，在仓库 Settings 里添加 `TUSHARE_TOKEN` secret，即可手动运行，或按工作日北京时间 17:30 定时生成并提交新的 HTML。
+把这个工程放到 GitHub 后，在仓库 Settings 里添加 `TUSHARE_TOKEN` secret，即可手动运行生成并提交新的 HTML。
+
+当前推荐用 Vercel Cron 调用仓库里的 API：
+
+```text
+api/trigger_github_action.js
+vercel.json
+```
+
+Vercel 环境变量：
+
+- `GITHUB_DISPATCH_TOKEN`：有本仓库 Actions 读写权限的 GitHub token
+- `CRON_SECRET`：保护触发入口的随机密钥
+
+`vercel.json` 里配置为工作日 UTC 10:00 触发，也就是北京时间 18:00 这一小时内触发。

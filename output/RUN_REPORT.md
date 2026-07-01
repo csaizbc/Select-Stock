@@ -80,6 +80,7 @@
 - `default_excluded.csv`：默认条件剔除清单
 - `default_passed_top_gain.csv`：默认通过股票涨幅前 100
 - `default_passed_top_loss.csv`：默认通过股票跌幅前 100
+- `industry_return_summary.csv`：按申万二级行业统计的默认通过股票平均涨跌幅
 - `industries/`：按申万二级行业拆分的默认通过清单
 - `pools/`：按股票池拆分的全量、通过、剔除清单
 - `payload.json`：HTML 内嵌的完整数据

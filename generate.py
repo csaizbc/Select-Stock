@@ -630,6 +630,21 @@ def write_data_outputs(payload: dict, output_dir: Path) -> dict:
         ]
     ).sort_values(["default_passed_count", "sw_l2_name"], ascending=[False, True])
     industry_summary.to_csv(output_dir / "industry_summary.csv", index=False, encoding="utf-8-sig")
+
+    industry_return_summary = (
+        passed.dropna(subset=["pct_chg"])
+        .groupby("sw_l2_display", dropna=False)
+        .agg(default_passed_quote_count=("ts_code", "count"), avg_pct_chg=("pct_chg", "mean"))
+        .reset_index()
+        .rename(columns={"sw_l2_display": "sw_l2_name"})
+    )
+    if not industry_return_summary.empty:
+        industry_return_summary["avg_pct_chg"] = industry_return_summary["avg_pct_chg"].round(3)
+        industry_return_summary = industry_return_summary.sort_values(
+            ["avg_pct_chg", "default_passed_quote_count", "sw_l2_name"],
+            ascending=[False, False, True],
+        )
+    industry_return_summary.to_csv(output_dir / "industry_return_summary.csv", index=False, encoding="utf-8-sig")
     write_run_report(summary, output_dir / "RUN_REPORT.md")
     return summary
 
@@ -677,6 +692,7 @@ def write_run_report(summary: dict, path: Path) -> None:
             "- `default_excluded.csv`：默认条件剔除清单",
             "- `default_passed_top_gain.csv`：默认通过股票涨幅前 100",
             "- `default_passed_top_loss.csv`：默认通过股票跌幅前 100",
+            "- `industry_return_summary.csv`：按申万二级行业统计的默认通过股票平均涨跌幅",
             "- `industries/`：按申万二级行业拆分的默认通过清单",
             "- `pools/`：按股票池拆分的全量、通过、剔除清单",
             "- `payload.json`：HTML 内嵌的完整数据",
@@ -809,6 +825,96 @@ def build_html(payload: dict) -> str:
       font-size: 14px;
     }}
     .summary strong {{ color: var(--text); }}
+    .industry-chart {{
+      margin: 0 0 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }}
+    .chart-head {{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 12px;
+    }}
+    .chart-head h2 {{
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.35;
+    }}
+    .chart-note {{
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }}
+    .chart-scroll {{
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding-bottom: 2px;
+    }}
+    .chart-bars {{
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      min-height: 260px;
+      min-width: 100%;
+      padding: 8px 0 0;
+    }}
+    .chart-item {{
+      display: grid;
+      grid-template-rows: 34px 170px 56px;
+      justify-items: center;
+      min-width: 46px;
+      max-width: 56px;
+      flex: 1 0 46px;
+    }}
+    .chart-value {{
+      align-self: end;
+      font-size: 12px;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+      color: var(--muted);
+    }}
+    .chart-plot {{
+      position: relative;
+      width: 100%;
+      height: 170px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      border-bottom: 1px solid var(--line);
+    }}
+    .chart-zero {{
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: #cbd5e1;
+    }}
+    .chart-bar {{
+      position: absolute;
+      left: 50%;
+      width: 24px;
+      transform: translateX(-50%);
+      border-radius: 5px 5px 0 0;
+      background: #c2410c;
+    }}
+    .chart-bar.negative {{
+      border-radius: 0 0 5px 5px;
+      background: #047857;
+    }}
+    .chart-label {{
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      max-height: 54px;
+      overflow: hidden;
+      color: #475467;
+      font-size: 12px;
+      line-height: 1.1;
+      padding-top: 6px;
+    }}
     .table-wrap {{
       overflow: auto;
       background: var(--panel);
@@ -872,6 +978,9 @@ def build_html(payload: dict) -> str:
     @media (max-width: 640px) {{
       .toolbar {{ grid-template-columns: 1fr; }}
       .table-wrap {{ max-height: none; }}
+      .chart-head {{ display: block; }}
+      .chart-note {{ display: block; margin-top: 4px; white-space: normal; }}
+      .chart-item {{ min-width: 42px; }}
       .actions {{ flex-wrap: wrap; }}
       button {{ flex: 1; }}
     }}
@@ -921,11 +1030,13 @@ def build_html(payload: dict) -> str:
           <option value="90">90 个交易日</option>
         </select>
       </label>
-      <label>涨跌幅排序
+      <label>排序方式
         <select id="pctSort">
           <option value="code">默认排序</option>
           <option value="desc">涨幅从高到低</option>
           <option value="asc">跌幅从高到低</option>
+          <option value="price_desc">股价从高到低</option>
+          <option value="price_asc">股价从低到高</option>
         </select>
       </label>
       <label>显示范围
@@ -951,6 +1062,15 @@ def build_html(payload: dict) -> str:
       <span>当前剔除：<strong id="excludedCount">0</strong></span>
       <span>显示：<strong id="shownCount">0</strong></span>
       <span>总数：<strong id="totalCount">0</strong></span>
+    </section>
+    <section class="industry-chart" aria-label="行业涨跌">
+      <div class="chart-head">
+        <h2>行业涨跌</h2>
+        <span class="chart-note">按当前显示列表的最新交易日平均涨跌幅从高到低排列</span>
+      </div>
+      <div class="chart-scroll">
+        <div id="industryChart" class="chart-bars"></div>
+      </div>
     </section>
     <section class="table-wrap">
       <table>
@@ -1015,6 +1135,7 @@ def build_html(payload: dict) -> str:
       excludedCount: document.getElementById('excludedCount'),
       shownCount: document.getElementById('shownCount'),
       totalCount: document.getElementById('totalCount'),
+      industryChart: document.getElementById('industryChart'),
       tableBody: document.getElementById('tableBody'),
       emptyState: document.getElementById('emptyState'),
     }};
@@ -1091,6 +1212,8 @@ def build_html(payload: dict) -> str:
       }};
       if (state.pctSort === 'desc') return list.sort(withNullLast((row) => row.pct_chg, -1));
       if (state.pctSort === 'asc') return list.sort(withNullLast((row) => row.pct_chg, 1));
+      if (state.pctSort === 'price_desc') return list.sort(withNullLast((row) => row.close, -1));
+      if (state.pctSort === 'price_asc') return list.sort(withNullLast((row) => row.close, 1));
       return list.sort((a, b) => String(a.ts_code).localeCompare(String(b.ts_code)));
     }}
 
@@ -1106,6 +1229,47 @@ def build_html(payload: dict) -> str:
         '"': '&quot;',
         "'": '&#39;',
       }}[char]));
+    }}
+
+    function buildIndustryReturns(list) {{
+      const groups = new Map();
+      for (const row of list) {{
+        const value = Number(row.pct_chg);
+        if (Number.isNaN(value)) continue;
+        const name = row.sw_l2_display || '未分类';
+        const current = groups.get(name) || {{ name, sum: 0, count: 0 }};
+        current.sum += value;
+        current.count += 1;
+        groups.set(name, current);
+      }}
+      return [...groups.values()]
+        .map((item) => ({{ ...item, avg: item.sum / item.count }}))
+        .sort((a, b) => b.avg - a.avg || b.count - a.count || a.name.localeCompare(b.name, 'zh-Hans-CN'));
+    }}
+
+    function renderIndustryChart(list) {{
+      const data = buildIndustryReturns(list).slice(0, 40);
+      if (!data.length) {{
+        els.industryChart.innerHTML = '<div class="empty">没有可展示的行业涨跌数据</div>';
+        return;
+      }}
+      const maxAbs = Math.max(...data.map((item) => Math.abs(item.avg)), 0.01);
+      const plotHeight = 170;
+      const zeroTop = plotHeight * (maxAbs / (maxAbs * 2));
+      els.industryChart.innerHTML = data.map((item) => {{
+        const magnitude = Math.max(2, Math.abs(item.avg) / (maxAbs * 2) * plotHeight);
+        const top = item.avg >= 0 ? zeroTop - magnitude : zeroTop;
+        return `
+          <div class="chart-item" title="${{escapeHtml(item.name)}}：${{formatPct(item.avg)}}，样本 ${{item.count}} 只">
+            <div class="chart-value ${{pctClass(item.avg)}}">${{formatPct(item.avg)}}</div>
+            <div class="chart-plot">
+              <span class="chart-zero" style="top: ${{zeroTop}}px"></span>
+              <span class="chart-bar ${{item.avg < 0 ? 'negative' : ''}}" style="top: ${{top}}px; height: ${{magnitude}}px"></span>
+            </div>
+            <div class="chart-label">${{escapeHtml(item.name)}}</div>
+          </div>
+        `;
+      }}).join('');
     }}
 
     function render() {{
@@ -1129,6 +1293,7 @@ def build_html(payload: dict) -> str:
       els.shownCount.textContent = String(shownRows.length);
       els.totalCount.textContent = String(rows.length);
       els.emptyState.hidden = shownRows.length > 0;
+      renderIndustryChart(shownRows);
 
       els.tableBody.innerHTML = shownRows.map((row) => `
         <tr>
