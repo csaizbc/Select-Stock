@@ -1,8 +1,0 @@
-[project]
-name = "select-stock-cron"
-version = "0.1.0"
-requires-python = ">=3.12"
-dependencies = []
-
-[tool.vercel]
-entrypoint = "api.trigger_github_action:handler"
