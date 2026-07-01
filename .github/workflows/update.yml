@@ -3,8 +3,9 @@ name: Update tomorrow stock list
 on:
   workflow_dispatch:
   schedule:
-    # UTC 09:30 = 北京时间 17:30，工作日 A 股收盘后自动更新。
-    - cron: "30 9 * * 1-5"
+    # 临时测试：北京时间 18:15 触发，用于验证 GitHub Actions schedule 派发。
+    - cron: "15 18 * * 1-5"
+      timezone: "Asia/Shanghai"
 
 permissions:
   actions: read
