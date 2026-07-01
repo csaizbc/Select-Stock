@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "echo \"No Vercel build required\""
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
