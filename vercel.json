@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/trigger-github-action",
+      "path": "/api/trigger_github_action",
       "schedule": "0 10 * * 1-5"
     }
   ]
