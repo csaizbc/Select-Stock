@@ -1,3 +1,3 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-002858.SZ,002858,002858,力盛体育,主板,深市,主板,801210.SI,社会服务,801216.SI,体育Ⅱ,体育Ⅱ,L,20170324,3386,9.27,11.16,2.292,False,True,True,0,0,0,0,True,
-600158.SH,600158,600158,中体产业,主板,沪市,主板,801210.SI,社会服务,801216.SI,体育Ⅱ,体育Ⅱ,L,19980327,10323,28.26,6.85,1.632,False,True,True,0,0,0,0,True,
+002858.SZ,002858,002858,力盛体育,主板,深市,主板,801210.SI,社会服务,801216.SI,体育Ⅱ,体育Ⅱ,L,20170324,3387,9.27,10.92,-2.151,False,True,True,0,0,0,0,True,
+600158.SH,600158,600158,中体产业,主板,沪市,主板,801210.SI,社会服务,801216.SI,体育Ⅱ,体育Ⅱ,L,19980327,10324,28.27,6.81,-0.584,False,True,True,0,0,0,0,True,
