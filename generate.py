@@ -322,6 +322,26 @@ def fetch_recent_namechange_st(pro, context: TradingContext) -> set[str]:
     return set(active["ts_code"].dropna().astype(str))
 
 
+def fetch_chip_perf(pro, context: TradingContext) -> pd.DataFrame:
+    chip = call_with_retry(
+        pro.cyq_perf,
+        trade_date=context.data_date,
+        fields="ts_code,trade_date,cost_15pct,cost_50pct,cost_85pct",
+    )
+    if chip.empty:
+        return pd.DataFrame(columns=["ts_code", "chip_concentration_70"])
+    chip["trade_date"] = chip["trade_date"].map(normalize_ymd)
+    chip = chip[chip["trade_date"].eq(context.data_date)].drop_duplicates("ts_code", keep="last")
+    for col in ["cost_15pct", "cost_50pct", "cost_85pct"]:
+        chip[col] = pd.to_numeric(chip[col], errors="coerce")
+    valid = chip["cost_50pct"].gt(0) & chip["cost_15pct"].notna() & chip["cost_85pct"].notna()
+    chip["chip_concentration_70"] = pd.NA
+    chip.loc[valid, "chip_concentration_70"] = (
+        (chip.loc[valid, "cost_85pct"] - chip.loc[valid, "cost_15pct"]) / chip.loc[valid, "cost_50pct"] * 100
+    )
+    return chip[["ts_code", "chip_concentration_70"]].reset_index(drop=True)
+
+
 def read_cached_json(path: Path) -> dict | list | None:
     if not path.exists():
         return None
@@ -425,6 +445,7 @@ def build_stock_rows(pro, context: TradingContext, daily: pd.DataFrame, cache_di
     suspend_counts = fetch_suspend_counts(pro, context)
     recent_st_codes = fetch_recent_namechange_st(pro, context)
     industry = build_sw_l2_membership(pro, context, cache_dir, refresh=refresh_industry)
+    chip_perf = fetch_chip_perf(pro, context)
 
     daily = daily[["ts_code", "close", "pct_chg"]].copy()
     daily["close"] = pd.to_numeric(daily["close"], errors="coerce")
@@ -433,6 +454,7 @@ def build_stock_rows(pro, context: TradingContext, daily: pd.DataFrame, cache_di
     frame = stock.merge(daily, on="ts_code", how="left")
     frame = frame.merge(suspend_counts, on="ts_code", how="left")
     frame = frame.merge(industry, on="ts_code", how="left")
+    frame = frame.merge(chip_perf, on="ts_code", how="left")
     for window in SUSPEND_WINDOWS:
         col = f"suspend_days_{window}"
         frame[col] = frame[col].fillna(0).astype(int)
@@ -470,6 +492,7 @@ def build_stock_rows(pro, context: TradingContext, daily: pd.DataFrame, cache_di
                 "list_age_years": None if pd.isna(row.list_age_years) else round(float(row.list_age_years), 2),
                 "close": None if pd.isna(row.close) else round(float(row.close), 3),
                 "pct_chg": None if pd.isna(row.pct_chg) else round(float(row.pct_chg), 3),
+                "chip_concentration_70": None if pd.isna(row.chip_concentration_70) else round(float(row.chip_concentration_70), 3),
                 "is_st": bool(row.is_st),
                 "is_normal_listed": bool(row.is_normal_listed),
                 "has_latest_quote": bool(row.has_latest_quote),
@@ -523,6 +546,7 @@ def rows_to_dataframe(rows: list[dict]) -> pd.DataFrame:
         "list_age_years",
         "close",
         "pct_chg",
+        "chip_concentration_70",
         "is_st",
         "is_normal_listed",
         "has_latest_quote",
@@ -925,7 +949,7 @@ def build_html(payload: dict) -> str:
     table {{
       width: 100%;
       border-collapse: collapse;
-      min-width: 1120px;
+      min-width: 1200px;
       font-size: 13px;
     }}
     thead th {{
@@ -1037,6 +1061,8 @@ def build_html(payload: dict) -> str:
           <option value="asc">跌幅从高到低</option>
           <option value="price_desc">股价从高到低</option>
           <option value="price_asc">股价从低到高</option>
+          <option value="chip_asc">筹码从集中到发散</option>
+          <option value="chip_desc">筹码从发散到集中</option>
         </select>
       </label>
       <label>显示范围
@@ -1085,6 +1111,7 @@ def build_html(payload: dict) -> str:
             <th class="num">上市年限</th>
             <th class="num">最新收盘价</th>
             <th class="num">当日涨跌幅</th>
+            <th class="num">筹码集中度</th>
             <th>是否 ST</th>
             <th class="num">停牌天数</th>
             <th>最新行情</th>
@@ -1214,6 +1241,8 @@ def build_html(payload: dict) -> str:
       if (state.pctSort === 'asc') return list.sort(withNullLast((row) => row.pct_chg, 1));
       if (state.pctSort === 'price_desc') return list.sort(withNullLast((row) => row.close, -1));
       if (state.pctSort === 'price_asc') return list.sort(withNullLast((row) => row.close, 1));
+      if (state.pctSort === 'chip_desc') return list.sort(withNullLast((row) => row.chip_concentration_70, -1));
+      if (state.pctSort === 'chip_asc') return list.sort(withNullLast((row) => row.chip_concentration_70, 1));
       return list.sort((a, b) => String(a.ts_code).localeCompare(String(b.ts_code)));
     }}
 
@@ -1306,6 +1335,7 @@ def build_html(payload: dict) -> str:
           <td class="num">${{formatNumber(row.list_age_years, 2)}}</td>
           <td class="num">${{formatNumber(row.close, 2)}}</td>
           <td class="num ${{pctClass(row.pct_chg)}}">${{formatPct(row.pct_chg)}}</td>
+          <td class="num">${{formatPct(row.chip_concentration_70)}}</td>
           <td>${{row.is_st ? tag('是', 'bad') : tag('否')}}</td>
           <td class="num">${{row.suspendDays}}</td>
           <td>${{row.has_latest_quote ? tag('有') : tag('无', 'warn')}}</td>
@@ -1344,7 +1374,7 @@ def build_html(payload: dict) -> str:
     }}
 
     function exportCsv() {{
-      const headers = ['股票代码','六位代码','股票名称','市场板块','交易所','申万一级行业','申万二级行业','上市日期','上市年限','最新收盘价','当日涨跌幅','是否ST','停牌天数','最新行情','状态','剔除原因'];
+      const headers = ['股票代码','六位代码','股票名称','市场板块','交易所','申万一级行业','申万二级行业','上市日期','上市年限','最新收盘价','当日涨跌幅','筹码集中度','是否ST','停牌天数','最新行情','状态','剔除原因'];
       const lines = [headers.join(',')];
       for (const row of shownRows) {{
         const values = [
@@ -1359,6 +1389,7 @@ def build_html(payload: dict) -> str:
           formatNumber(row.list_age_years, 2),
           formatNumber(row.close, 2),
           formatPct(row.pct_chg),
+          formatPct(row.chip_concentration_70),
           row.is_st ? '是' : '否',
           row.suspendDays,
           row.has_latest_quote ? '有' : '无',

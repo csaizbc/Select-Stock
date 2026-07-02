@@ -1,8 +1,8 @@
-﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000628.SZ,000628,000628,高新发展,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19961118,10818,29.62,47.88,-0.684,False,True,True,0,0,0,0,True,
-002761.SZ,002761,002761,浙江建投,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20150610,4040,11.06,6.75,0.148,False,True,True,0,0,0,0,True,
-600170.SH,600170,600170,上海建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19980623,10236,28.02,2.22,-0.893,False,True,True,0,0,0,0,True,
-600248.SH,600248,600248,陕建股份,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20000622,9506,26.03,2.76,0.73,False,True,True,0,0,0,0,True,
-600939.SH,600939,600939,重庆建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20170221,3418,9.36,2.41,0.0,False,True,True,0,0,0,0,True,
-601668.SH,601668,601668,中国建筑,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20090729,6182,16.93,4.44,0.68,False,True,True,0,0,0,0,True,
-601789.SH,601789,601789,宁波建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20110816,5434,14.88,4.05,-1.699,False,True,True,0,0,0,0,True,
+﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
+000628.SZ,000628,000628,高新发展,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19961118,10818,29.62,47.88,-0.684,14.286,False,True,True,0,0,0,0,True,
+002761.SZ,002761,002761,浙江建投,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20150610,4040,11.06,6.75,0.148,25.0,False,True,True,0,0,0,0,True,
+600170.SH,600170,600170,上海建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19980623,10236,28.02,2.22,-0.893,16.0,False,True,True,0,0,0,0,True,
+600248.SH,600248,600248,陕建股份,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20000622,9506,26.03,2.76,0.73,30.0,False,True,True,0,0,0,0,True,
+600939.SH,600939,600939,重庆建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20170221,3418,9.36,2.41,0.0,23.333,False,True,True,0,0,0,0,True,
+601668.SH,601668,601668,中国建筑,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20090729,6182,16.93,4.44,0.68,14.0,False,True,True,0,0,0,0,True,
+601789.SH,601789,601789,宁波建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20110816,5434,14.88,4.05,-1.699,11.905,False,True,True,0,0,0,0,True,

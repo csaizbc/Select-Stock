@@ -1,8 +1,8 @@
-﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000723.SZ,000723,000723,美锦能源,主板,深市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19970515,10640,29.13,3.43,-0.58,False,True,True,0,0,0,0,True,
-600408.SH,600408,600408,安泰集团,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,20030212,8541,23.38,2.47,0.816,False,True,True,0,0,0,0,True,
-600725.SH,600725,600725,云维股份,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19960702,10957,30.0,3.26,-4.118,False,True,True,0,0,0,0,True,
-600740.SH,600740,600740,山西焦化,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19960808,10920,29.9,3.29,0.612,False,True,True,0,0,0,0,True,
-600792.SH,600792,600792,云煤能源,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19970123,10752,29.44,3.25,0.309,False,True,True,0,0,0,0,True,
-601011.SH,601011,601011,宝泰隆,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,20110309,5594,15.32,2.69,-1.465,False,True,True,0,0,0,0,True,
-601015.SH,601015,601015,陕西黑猫,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,20141105,4257,11.66,2.98,-0.667,False,True,True,0,0,0,0,True,
+﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
+000723.SZ,000723,000723,美锦能源,主板,深市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19970515,10640,29.13,3.43,-0.58,30.0,False,True,True,0,0,0,0,True,
+600408.SH,600408,600408,安泰集团,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,20030212,8541,23.38,2.47,0.816,12.0,False,True,True,0,0,0,0,True,
+600725.SH,600725,600725,云维股份,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19960702,10957,30.0,3.26,-4.118,28.205,False,True,True,0,0,0,0,True,
+600740.SH,600740,600740,山西焦化,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19960808,10920,29.9,3.29,0.612,23.077,False,True,True,0,0,0,0,True,
+600792.SH,600792,600792,云煤能源,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,19970123,10752,29.44,3.25,0.309,27.5,False,True,True,0,0,0,0,True,
+601011.SH,601011,601011,宝泰隆,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,20110309,5594,15.32,2.69,-1.465,17.241,False,True,True,0,0,0,0,True,
+601015.SH,601015,601015,陕西黑猫,主板,沪市,主板,801950.SI,煤炭,801952.SI,焦炭Ⅱ,焦炭Ⅱ,L,20141105,4257,11.66,2.98,-0.667,31.429,False,True,True,0,0,0,0,True,
