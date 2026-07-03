@@ -1,6 +1,17 @@
 name: Update tomorrow stock list
 
 on:
+  # Deploy UI changes pushed to main; generated output commits do not match these paths.
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/update.yml"
+      - "api/**"
+      - "config.example.json"
+      - "generate.py"
+      - "requirements.txt"
+      - "vercel.json"
   # Triggered by Vercel Cron via the GitHub workflow_dispatch API.
   workflow_dispatch:
   # Fallback scheduler in case the Vercel trigger misses a weekday run.

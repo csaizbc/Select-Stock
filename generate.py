@@ -1004,28 +1004,25 @@ def build_html(payload: dict) -> str:
       white-space: nowrap;
       font-weight: 650;
     }}
+    .sortable-header {{
+      cursor: pointer;
+      user-select: none;
+    }}
     .sort-header {{
       display: inline-flex;
       align-items: center;
       justify-content: flex-end;
       gap: 4px;
-      min-height: 0;
       width: 100%;
-      border: 0;
-      border-radius: 4px;
-      background: transparent;
       color: inherit;
-      padding: 0;
-      font: inherit;
-      cursor: pointer;
     }}
-    .sort-header:hover,
-    .sort-header.active {{
+    .sortable-header:hover .sort-header,
+    .sortable-header.active .sort-header {{
       color: var(--accent);
     }}
-    .sort-header:focus-visible {{
+    .sortable-header:focus-visible {{
       outline: 2px solid var(--accent);
-      outline-offset: 3px;
+      outline-offset: -3px;
     }}
     .sort-mark {{
       min-width: 26px;
@@ -1180,9 +1177,9 @@ def build_html(payload: dict) -> str:
             <th>申万二级行业</th>
             <th>上市日期</th>
             <th class="num">上市年限</th>
-            <th class="num"><button type="button" class="sort-header" data-sort-field="price">最新收盘价<span class="sort-mark" aria-hidden="true"></span></button></th>
-            <th class="num"><button type="button" class="sort-header" data-sort-field="pct">当日涨跌幅<span class="sort-mark" aria-hidden="true"></span></button></th>
-            <th class="num"><button type="button" class="sort-header" data-sort-field="chip">筹码集中度<span class="sort-mark" aria-hidden="true"></span></button></th>
+            <th class="num sortable-header" data-sort-field="price" role="button" tabindex="0"><span class="sort-header">最新收盘价<span class="sort-mark" aria-hidden="true"></span></span></th>
+            <th class="num sortable-header" data-sort-field="pct" role="button" tabindex="0"><span class="sort-header">当日涨跌幅<span class="sort-mark" aria-hidden="true"></span></span></th>
+            <th class="num sortable-header" data-sort-field="chip" role="button" tabindex="0"><span class="sort-header">筹码集中度<span class="sort-mark" aria-hidden="true"></span></span></th>
             <th>是否 ST</th>
             <th class="num">停牌天数</th>
             <th>最新行情</th>
@@ -1333,12 +1330,13 @@ def build_html(payload: dict) -> str:
 
     function updateSortHeaders() {{
       const active = SORT_BY_VALUE[state.pctSort];
-      for (const button of els.sortHeaders) {{
-        const mark = button.querySelector('.sort-mark');
-        const isActive = active && active.field === button.dataset.sortField;
-        button.classList.toggle('active', Boolean(isActive));
-        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-        button.setAttribute('title', isActive ? `当前：${{active.direction === 'asc' ? '正序' : '反序'}}，点击切换排序` : '点击按此列正序排序');
+      for (const header of els.sortHeaders) {{
+        const mark = header.querySelector('.sort-mark');
+        const isActive = active && active.field === header.dataset.sortField;
+        header.classList.toggle('active', Boolean(isActive));
+        header.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        header.setAttribute('aria-sort', isActive ? (active.direction === 'asc' ? 'ascending' : 'descending') : 'none');
+        header.setAttribute('title', isActive ? `当前：${{active.direction === 'asc' ? '正序' : '反序'}}，点击切换排序` : '点击按此列正序排序');
         if (mark) mark.textContent = isActive ? (active.direction === 'asc' ? '正序' : '反序') : '';
       }}
     }}
@@ -1558,8 +1556,13 @@ def build_html(payload: dict) -> str:
       if (!item || !els.industryChart.contains(item)) return;
       selectIndustryFromChart(item.dataset.industry);
     }});
-    for (const button of els.sortHeaders) {{
-      button.addEventListener('click', () => toggleColumnSort(button.dataset.sortField));
+    for (const header of els.sortHeaders) {{
+      header.addEventListener('click', () => toggleColumnSort(header.dataset.sortField));
+      header.addEventListener('keydown', (event) => {{
+        if (event.key !== 'Enter' && event.key !== ' ') return;
+        event.preventDefault();
+        toggleColumnSort(header.dataset.sortField);
+      }});
     }}
     els.searchBox.addEventListener('input', syncStateFromControls);
     els.resetBtn.addEventListener('click', resetDefaults);
