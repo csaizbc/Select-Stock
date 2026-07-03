@@ -903,6 +903,28 @@ def build_html(payload: dict) -> str:
       min-width: 46px;
       max-width: 56px;
       flex: 1 0 46px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+    }}
+    .chart-item:focus-visible {{
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 6px;
+    }}
+    .chart-item:hover .chart-bar {{
+      filter: brightness(1.08);
+    }}
+    .chart-item.active .chart-plot {{
+      border-bottom-color: var(--accent);
+    }}
+    .chart-item.active .chart-count,
+    .chart-item.active .chart-label {{
+      color: var(--accent);
     }}
     .chart-value {{
       align-self: end;
@@ -1111,7 +1133,7 @@ def build_html(payload: dict) -> str:
     <section class="industry-chart" aria-label="行业涨跌">
       <div class="chart-head">
         <h2>行业涨跌</h2>
-        <span class="chart-note">按当前显示列表的最新交易日平均涨跌幅从高到低排列，柱下为当前只数</span>
+        <span class="chart-note">按当前筛选条件的最新交易日平均涨跌幅从高到低排列，柱下为当前只数</span>
       </div>
       <div class="chart-scroll">
         <div id="industryChart" class="chart-bars"></div>
@@ -1266,6 +1288,14 @@ def build_html(payload: dict) -> str:
       return list.sort((a, b) => String(a.ts_code).localeCompare(String(b.ts_code)));
     }}
 
+    function filterByDisplayStatus(list) {{
+      return list.filter((row) => {{
+        if (state.status === 'passed') return row.passed;
+        if (state.status === 'excluded') return !row.passed;
+        return true;
+      }});
+    }}
+
     function tag(text, cls = '') {{
       return `<span class="tag ${{cls}}">${{text}}</span>`;
     }}
@@ -1311,8 +1341,9 @@ def build_html(payload: dict) -> str:
       els.industryChart.innerHTML = data.map((item) => {{
         const magnitude = Math.max(2, Math.abs(item.avg) / (maxAbs * 2) * plotHeight);
         const top = item.avg >= 0 ? zeroTop - magnitude : zeroTop;
+        const active = state.industry === item.name;
         return `
-          <div class="chart-item" title="${{escapeHtml(item.name)}}：${{formatPct(item.avg)}}，当前 ${{item.count}} 只，行情样本 ${{item.quoteCount}} 只">
+          <button type="button" class="chart-item ${{active ? 'active' : ''}}" data-industry="${{escapeHtml(item.name)}}" title="${{escapeHtml(item.name)}}：${{formatPct(item.avg)}}，当前 ${{item.count}} 只，行情样本 ${{item.quoteCount}} 只" aria-pressed="${{active ? 'true' : 'false'}}" aria-label="${{escapeHtml(item.name)}}，${{formatPct(item.avg)}}，当前 ${{item.count}} 只">
             <div class="chart-value ${{pctClass(item.avg)}}">${{formatPct(item.avg)}}</div>
             <div class="chart-plot">
               <span class="chart-zero" style="top: ${{zeroTop}}px"></span>
@@ -1320,13 +1351,14 @@ def build_html(payload: dict) -> str:
             </div>
             <div class="chart-count">${{item.count}}只</div>
             <div class="chart-label">${{escapeHtml(item.name)}}</div>
-          </div>
+          </button>
         `;
       }}).join('');
     }}
 
     function render() {{
       const selected = rows.filter((row) => poolMatched(row) && industryMatched(row) && searchMatched(row));
+      const chartSelected = rows.filter((row) => poolMatched(row) && searchMatched(row));
       let passedCount = 0;
       let excludedCount = 0;
       const evaluated = selected.map((row) => {{
@@ -1335,18 +1367,19 @@ def build_html(payload: dict) -> str:
         else excludedCount += 1;
         return {{ ...row, ...result }};
       }});
-      shownRows = sortRows(evaluated.filter((row) => {{
-        if (state.status === 'passed') return row.passed;
-        if (state.status === 'excluded') return !row.passed;
-        return true;
-      }}));
+      const chartEvaluated = chartSelected.map((row) => {{
+        const result = evaluateRow(row);
+        return {{ ...row, ...result }};
+      }});
+      shownRows = sortRows(filterByDisplayStatus(evaluated));
+      const chartRows = filterByDisplayStatus(chartEvaluated);
 
       els.passedCount.textContent = String(passedCount);
       els.excludedCount.textContent = String(excludedCount);
       els.shownCount.textContent = String(shownRows.length);
       els.totalCount.textContent = String(rows.length);
       els.emptyState.hidden = shownRows.length > 0;
-      renderIndustryChart(shownRows);
+      renderIndustryChart(chartRows);
 
       els.tableBody.innerHTML = shownRows.map((row) => `
         <tr>
@@ -1367,6 +1400,13 @@ def build_html(payload: dict) -> str:
           <td class="muted">${{escapeHtml(row.reasons.join('、'))}}</td>
         </tr>
       `).join('');
+    }}
+
+    function selectIndustryFromChart(industry) {{
+      if (!industry) return;
+      state.industry = state.industry === industry ? 'all' : industry;
+      els.industryFilter.value = state.industry;
+      render();
     }}
 
     function syncStateFromControls() {{
@@ -1447,6 +1487,11 @@ def build_html(payload: dict) -> str:
     for (const el of [els.poolFilter, els.industryFilter, els.ageFilter, els.suspendWindow, els.pctSort, els.statusFilter, els.stFilter, els.suspendFilter, els.quoteFilter]) {{
       el.addEventListener('change', syncStateFromControls);
     }}
+    els.industryChart.addEventListener('click', (event) => {{
+      const item = event.target.closest('.chart-item');
+      if (!item || !els.industryChart.contains(item)) return;
+      selectIndustryFromChart(item.dataset.industry);
+    }});
     els.searchBox.addEventListener('input', syncStateFromControls);
     els.resetBtn.addEventListener('click', resetDefaults);
     els.exportBtn.addEventListener('click', exportCsv);
