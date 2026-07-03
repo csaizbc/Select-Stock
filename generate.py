@@ -1041,17 +1041,17 @@ def build_html(payload: dict) -> str:
       border-left: 4px solid transparent;
       border-right: 4px solid transparent;
     }}
-    .sort-arrow.up {{
+    .sort-arrow.sort-arrow-up {{
       border-bottom: 5px solid currentColor;
     }}
-    .sort-arrow.down {{
+    .sort-arrow.sort-arrow-down {{
       border-top: 5px solid currentColor;
     }}
     .sortable-header:hover .sort-arrow {{
       opacity: 0.85;
     }}
-    .sortable-header.asc .sort-arrow.up,
-    .sortable-header.desc .sort-arrow.down {{
+    .sortable-header.asc .sort-arrow.sort-arrow-up,
+    .sortable-header.desc .sort-arrow.sort-arrow-down {{
       color: #111827;
       opacity: 1;
     }}
@@ -1201,9 +1201,9 @@ def build_html(payload: dict) -> str:
             <th>申万二级行业</th>
             <th>上市日期</th>
             <th class="num">上市年限</th>
-            <th class="num sortable-header" data-sort-field="price" role="button" tabindex="0"><span class="sort-header">最新收盘价<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow up"></span><span class="sort-arrow down"></span></span></span></th>
-            <th class="num sortable-header" data-sort-field="pct" role="button" tabindex="0"><span class="sort-header">当日涨跌幅<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow up"></span><span class="sort-arrow down"></span></span></span></th>
-            <th class="num sortable-header" data-sort-field="chip" role="button" tabindex="0"><span class="sort-header">筹码集中度<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow up"></span><span class="sort-arrow down"></span></span></span></th>
+            <th class="num sortable-header" data-sort-field="price" role="button" tabindex="0"><span class="sort-header">最新收盘价<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow sort-arrow-up"></span><span class="sort-arrow sort-arrow-down"></span></span></span></th>
+            <th class="num sortable-header" data-sort-field="pct" role="button" tabindex="0"><span class="sort-header">当日涨跌幅<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow sort-arrow-up"></span><span class="sort-arrow sort-arrow-down"></span></span></span></th>
+            <th class="num sortable-header" data-sort-field="chip" role="button" tabindex="0"><span class="sort-header">筹码集中度<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow sort-arrow-up"></span><span class="sort-arrow sort-arrow-down"></span></span></span></th>
             <th>是否 ST</th>
             <th class="num">停牌天数</th>
             <th>最新行情</th>
