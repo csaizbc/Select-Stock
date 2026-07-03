@@ -892,13 +892,13 @@ def build_html(payload: dict) -> str:
       display: flex;
       align-items: flex-end;
       gap: 8px;
-      min-height: 260px;
+      min-height: 282px;
       min-width: 100%;
       padding: 8px 0 0;
     }}
     .chart-item {{
       display: grid;
-      grid-template-rows: 34px 170px 56px;
+      grid-template-rows: 34px 170px 22px 56px;
       justify-items: center;
       min-width: 46px;
       max-width: 56px;
@@ -938,6 +938,14 @@ def build_html(payload: dict) -> str:
     .chart-bar.negative {{
       border-radius: 0 0 5px 5px;
       background: #047857;
+    }}
+    .chart-count {{
+      align-self: center;
+      color: #667085;
+      font-size: 11px;
+      font-weight: 650;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
     }}
     .chart-label {{
       writing-mode: vertical-rl;
@@ -1103,7 +1111,7 @@ def build_html(payload: dict) -> str:
     <section class="industry-chart" aria-label="行业涨跌">
       <div class="chart-head">
         <h2>行业涨跌</h2>
-        <span class="chart-note">按当前显示列表的最新交易日平均涨跌幅从高到低排列</span>
+        <span class="chart-note">按当前显示列表的最新交易日平均涨跌幅从高到低排列，柱下为当前只数</span>
       </div>
       <div class="chart-scroll">
         <div id="industryChart" class="chart-bars"></div>
@@ -1275,16 +1283,19 @@ def build_html(payload: dict) -> str:
     function buildIndustryReturns(list) {{
       const groups = new Map();
       for (const row of list) {{
-        const value = Number(row.pct_chg);
-        if (Number.isNaN(value)) continue;
         const name = row.sw_l2_display || '未分类';
-        const current = groups.get(name) || {{ name, sum: 0, count: 0 }};
-        current.sum += value;
+        const current = groups.get(name) || {{ name, sum: 0, count: 0, quoteCount: 0 }};
         current.count += 1;
+        const hasPct = row.pct_chg !== null && row.pct_chg !== undefined && !Number.isNaN(Number(row.pct_chg));
+        if (hasPct) {{
+          current.sum += Number(row.pct_chg);
+          current.quoteCount += 1;
+        }}
         groups.set(name, current);
       }}
       return [...groups.values()]
-        .map((item) => ({{ ...item, avg: item.sum / item.count }}))
+        .filter((item) => item.quoteCount > 0)
+        .map((item) => ({{ ...item, avg: item.sum / item.quoteCount }}))
         .sort((a, b) => b.avg - a.avg || b.count - a.count || a.name.localeCompare(b.name, 'zh-Hans-CN'));
     }}
 
@@ -1301,12 +1312,13 @@ def build_html(payload: dict) -> str:
         const magnitude = Math.max(2, Math.abs(item.avg) / (maxAbs * 2) * plotHeight);
         const top = item.avg >= 0 ? zeroTop - magnitude : zeroTop;
         return `
-          <div class="chart-item" title="${{escapeHtml(item.name)}}：${{formatPct(item.avg)}}，样本 ${{item.count}} 只">
+          <div class="chart-item" title="${{escapeHtml(item.name)}}：${{formatPct(item.avg)}}，当前 ${{item.count}} 只，行情样本 ${{item.quoteCount}} 只">
             <div class="chart-value ${{pctClass(item.avg)}}">${{formatPct(item.avg)}}</div>
             <div class="chart-plot">
               <span class="chart-zero" style="top: ${{zeroTop}}px"></span>
               <span class="chart-bar ${{item.avg < 0 ? 'negative' : ''}}" style="top: ${{top}}px; height: ${{magnitude}}px"></span>
             </div>
+            <div class="chart-count">${{item.count}}只</div>
             <div class="chart-label">${{escapeHtml(item.name)}}</div>
           </div>
         `;
