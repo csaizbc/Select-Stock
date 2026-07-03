@@ -1012,24 +1012,48 @@ def build_html(payload: dict) -> str:
       display: inline-flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 4px;
+      gap: 6px;
       width: 100%;
       color: inherit;
     }}
-    .sortable-header:hover .sort-header,
-    .sortable-header.active .sort-header {{
+    .sortable-header:hover .sort-header {{
       color: var(--accent);
     }}
     .sortable-header:focus-visible {{
       outline: 2px solid var(--accent);
       outline-offset: -3px;
     }}
-    .sort-mark {{
-      min-width: 26px;
+    .sort-indicator {{
+      display: inline-grid;
+      grid-template-rows: 6px 6px;
+      gap: 2px;
+      justify-items: center;
+      align-items: center;
+      width: 10px;
+      color: #98a2b3;
+      flex: 0 0 auto;
+    }}
+    .sort-arrow {{
+      display: block;
+      width: 0;
+      height: 0;
+      opacity: 0.55;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+    }}
+    .sort-arrow.up {{
+      border-bottom: 5px solid currentColor;
+    }}
+    .sort-arrow.down {{
+      border-top: 5px solid currentColor;
+    }}
+    .sortable-header:hover .sort-arrow {{
+      opacity: 0.85;
+    }}
+    .sortable-header.asc .sort-arrow.up,
+    .sortable-header.desc .sort-arrow.down {{
       color: var(--accent);
-      font-size: 11px;
-      font-weight: 700;
-      text-align: left;
+      opacity: 1;
     }}
     tbody td {{
       padding: 9px;
@@ -1177,9 +1201,9 @@ def build_html(payload: dict) -> str:
             <th>申万二级行业</th>
             <th>上市日期</th>
             <th class="num">上市年限</th>
-            <th class="num sortable-header" data-sort-field="price" role="button" tabindex="0"><span class="sort-header">最新收盘价<span class="sort-mark" aria-hidden="true"></span></span></th>
-            <th class="num sortable-header" data-sort-field="pct" role="button" tabindex="0"><span class="sort-header">当日涨跌幅<span class="sort-mark" aria-hidden="true"></span></span></th>
-            <th class="num sortable-header" data-sort-field="chip" role="button" tabindex="0"><span class="sort-header">筹码集中度<span class="sort-mark" aria-hidden="true"></span></span></th>
+            <th class="num sortable-header" data-sort-field="price" role="button" tabindex="0"><span class="sort-header">最新收盘价<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow up"></span><span class="sort-arrow down"></span></span></span></th>
+            <th class="num sortable-header" data-sort-field="pct" role="button" tabindex="0"><span class="sort-header">当日涨跌幅<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow up"></span><span class="sort-arrow down"></span></span></span></th>
+            <th class="num sortable-header" data-sort-field="chip" role="button" tabindex="0"><span class="sort-header">筹码集中度<span class="sort-indicator" aria-hidden="true"><span class="sort-arrow up"></span><span class="sort-arrow down"></span></span></span></th>
             <th>是否 ST</th>
             <th class="num">停牌天数</th>
             <th>最新行情</th>
@@ -1331,13 +1355,13 @@ def build_html(payload: dict) -> str:
     function updateSortHeaders() {{
       const active = SORT_BY_VALUE[state.pctSort];
       for (const header of els.sortHeaders) {{
-        const mark = header.querySelector('.sort-mark');
         const isActive = active && active.field === header.dataset.sortField;
         header.classList.toggle('active', Boolean(isActive));
+        header.classList.toggle('asc', Boolean(isActive && active.direction === 'asc'));
+        header.classList.toggle('desc', Boolean(isActive && active.direction === 'desc'));
         header.setAttribute('aria-pressed', isActive ? 'true' : 'false');
         header.setAttribute('aria-sort', isActive ? (active.direction === 'asc' ? 'ascending' : 'descending') : 'none');
         header.setAttribute('title', isActive ? `当前：${{active.direction === 'asc' ? '正序' : '反序'}}，点击切换排序` : '点击按此列正序排序');
-        if (mark) mark.textContent = isActive ? (active.direction === 'asc' ? '正序' : '反序') : '';
       }}
     }}
 
