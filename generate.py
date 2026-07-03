@@ -1017,7 +1017,7 @@ def build_html(payload: dict) -> str:
       color: inherit;
     }}
     .sortable-header:hover .sort-header {{
-      color: var(--accent);
+      color: #111827;
     }}
     .sortable-header:focus-visible {{
       outline: 2px solid var(--accent);
@@ -1052,7 +1052,7 @@ def build_html(payload: dict) -> str:
     }}
     .sortable-header.asc .sort-arrow.up,
     .sortable-header.desc .sort-arrow.down {{
-      color: var(--accent);
+      color: #111827;
       opacity: 1;
     }}
     tbody td {{
