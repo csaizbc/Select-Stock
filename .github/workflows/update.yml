@@ -3,6 +3,9 @@ name: Update tomorrow stock list
 on:
   # Triggered by Vercel Cron via the GitHub workflow_dispatch API.
   workflow_dispatch:
+  # Fallback scheduler in case the Vercel trigger misses a weekday run.
+  schedule:
+    - cron: "10 12 * * 1-5"
 
 permissions:
   actions: read
@@ -17,10 +20,10 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 25
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url || steps.deployment_retry.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -46,4 +49,11 @@ jobs:
         with:
           path: dist
       - id: deployment
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+      - name: Wait before retrying Pages deploy
+        if: steps.deployment.outcome == 'failure'
+        run: sleep 120
+      - id: deployment_retry
+        if: steps.deployment.outcome == 'failure'
         uses: actions/deploy-pages@v5

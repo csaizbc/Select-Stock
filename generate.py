@@ -34,6 +34,7 @@ TIME_SYNC_URLS = (
 )
 MAX_SUSPEND_WINDOW = 90
 SUSPEND_WINDOWS = (20, 40, 60, 90)
+CHIP_LOOKBACK_DAYS = 5
 DEFAULT_AGE_DAYS = 730
 DEFAULT_SUSPEND_WINDOW = 60
 INDUSTRY_SRC = "SW2021"
@@ -322,16 +323,23 @@ def fetch_recent_namechange_st(pro, context: TradingContext) -> set[str]:
     return set(active["ts_code"].dropna().astype(str))
 
 
-def fetch_chip_perf(pro, context: TradingContext) -> pd.DataFrame:
-    chip = call_with_retry(
-        pro.cyq_perf,
-        trade_date=context.data_date,
-        fields="ts_code,trade_date,cost_15pct,cost_50pct,cost_85pct",
-    )
+def fetch_chip_perf(pro, context: TradingContext) -> tuple[str, pd.DataFrame]:
+    chip = pd.DataFrame()
+    chip_date = ""
+    for trade_date in reversed(context.recent_trade_dates[-CHIP_LOOKBACK_DAYS:]):
+        candidate = call_with_retry(
+            pro.cyq_perf,
+            trade_date=trade_date,
+            fields="ts_code,trade_date,cost_15pct,cost_50pct,cost_85pct",
+        )
+        if not candidate.empty:
+            chip = candidate
+            chip_date = trade_date
+            break
     if chip.empty:
-        return pd.DataFrame(columns=["ts_code", "chip_concentration_70"])
+        raise RuntimeError(f"No cyq_perf data found in the last {CHIP_LOOKBACK_DAYS} trading days.")
     chip["trade_date"] = chip["trade_date"].map(normalize_ymd)
-    chip = chip[chip["trade_date"].eq(context.data_date)].drop_duplicates("ts_code", keep="last")
+    chip = chip[chip["trade_date"].eq(chip_date)].drop_duplicates("ts_code", keep="last")
     for col in ["cost_15pct", "cost_50pct", "cost_85pct"]:
         chip[col] = pd.to_numeric(chip[col], errors="coerce")
     valid = chip["cost_50pct"].gt(0) & chip["cost_15pct"].notna() & chip["cost_85pct"].notna()
@@ -339,7 +347,7 @@ def fetch_chip_perf(pro, context: TradingContext) -> pd.DataFrame:
     chip.loc[valid, "chip_concentration_70"] = (
         (chip.loc[valid, "cost_85pct"] - chip.loc[valid, "cost_15pct"]) / chip.loc[valid, "cost_50pct"] * 100
     )
-    return chip[["ts_code", "chip_concentration_70"]].reset_index(drop=True)
+    return chip_date, chip[["ts_code", "chip_concentration_70"]].reset_index(drop=True)
 
 
 def read_cached_json(path: Path) -> dict | list | None:
@@ -440,12 +448,12 @@ def build_sw_l2_membership(pro, context: TradingContext, cache_dir: Path, refres
     return active[["ts_code", "sw_l1_code", "sw_l1_name", "sw_l2_code", "sw_l2_name"]].reset_index(drop=True)
 
 
-def build_stock_rows(pro, context: TradingContext, daily: pd.DataFrame, cache_dir: Path, refresh_industry: bool = False) -> list[dict]:
+def build_stock_rows(pro, context: TradingContext, daily: pd.DataFrame, cache_dir: Path, refresh_industry: bool = False) -> tuple[list[dict], str]:
     stock = fetch_stock_basic(pro)
     suspend_counts = fetch_suspend_counts(pro, context)
     recent_st_codes = fetch_recent_namechange_st(pro, context)
     industry = build_sw_l2_membership(pro, context, cache_dir, refresh=refresh_industry)
-    chip_perf = fetch_chip_perf(pro, context)
+    chip_data_date, chip_perf = fetch_chip_perf(pro, context)
 
     daily = daily[["ts_code", "close", "pct_chg"]].copy()
     daily["close"] = pd.to_numeric(daily["close"], errors="coerce")
@@ -502,7 +510,7 @@ def build_stock_rows(pro, context: TradingContext, daily: pd.DataFrame, cache_di
                 "suspend_days_90": int(row.suspend_days_90),
             }
         )
-    return rows
+    return rows, chip_data_date
 
 
 def default_reject_reasons(row: dict) -> list[str]:
@@ -574,6 +582,7 @@ def build_summary(payload: dict, frame: pd.DataFrame) -> dict:
     return {
         "as_of_date": meta["as_of_date"],
         "data_date": meta["data_date"],
+        "chip_data_date": meta.get("chip_data_date", ""),
         "target_trade_date": meta["target_trade_date"],
         "generated_at": meta["generated_at"],
         "total_count": int(len(frame)),
@@ -678,6 +687,7 @@ def write_run_report(summary: dict, path: Path) -> None:
         "# 明日股票列表本地运行报告",
         "",
         f"- 数据日期：{format_ymd(summary['data_date'])}",
+        f"- 筹码日期：{format_ymd(summary['chip_data_date'])}",
         f"- 目标交易日：{format_ymd(summary['target_trade_date'])}",
         f"- 全量股票数：{summary['total_count']}",
         f"- 默认通过数：{summary['default_passed_count']}",
@@ -1015,6 +1025,7 @@ def build_html(payload: dict) -> str:
     <h1>明日股票列表</h1>
     <div class="meta">
       <span>数据日期：<strong id="dataDate"></strong></span>
+      <span>筹码日期：<strong id="chipDate"></strong></span>
       <span>用于：<strong id="targetDate"></strong> 盘前参考</span>
       <span>生成时间（北京时间）：<strong id="generatedAt"></strong></span>
     </div>
@@ -1144,6 +1155,7 @@ def build_html(payload: dict) -> str:
 
     const els = {{
       dataDate: document.getElementById('dataDate'),
+      chipDate: document.getElementById('chipDate'),
       targetDate: document.getElementById('targetDate'),
       generatedAt: document.getElementById('generatedAt'),
       poolFilter: document.getElementById('poolFilter'),
@@ -1410,6 +1422,7 @@ def build_html(payload: dict) -> str:
     }}
 
     els.dataDate.textContent = formatDate(payload.meta.data_date);
+    els.chipDate.textContent = formatDate(payload.meta.chip_data_date);
     els.targetDate.textContent = formatDate(payload.meta.target_trade_date);
     els.generatedAt.textContent = payload.meta.generated_at || '';
     const industryOptions = [...new Set(rows.map((row) => row.sw_l2_display || '未分类'))].sort((a, b) => a.localeCompare(b, 'zh-Hans-CN'));
@@ -1435,13 +1448,14 @@ def build_html(payload: dict) -> str:
 def build_payload(as_of_date: str | None, cache_dir: Path, refresh_industry: bool = False) -> dict:
     pro = get_tushare_pro()
     context, daily = resolve_trading_context(pro, as_of_date)
-    rows = build_stock_rows(pro, context, daily, cache_dir=cache_dir, refresh_industry=refresh_industry)
+    rows, chip_data_date = build_stock_rows(pro, context, daily, cache_dir=cache_dir, refresh_industry=refresh_industry)
     generated_at = current_beijing_timestamp()
     industry_names = sorted({row.get("sw_l2_display") or "未分类" for row in rows})
     return {
         "meta": {
             "as_of_date": context.as_of_date,
             "data_date": context.data_date,
+            "chip_data_date": chip_data_date,
             "target_trade_date": context.target_trade_date,
             "generated_at": generated_at,
             "row_count": len(rows),

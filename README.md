@@ -48,7 +48,7 @@ output/
 ## 数据口径
 
 - 股票基础、行情、停牌、改名 ST 状态来自 Tushare。
-- 筹码集中度来自 Tushare `cyq_perf`，按 `(cost_85pct - cost_15pct) / cost_50pct * 100` 计算，数值越小表示 70% 主要筹码成本区间越集中。
+- 筹码集中度来自 Tushare `cyq_perf`，按 `(cost_85pct - cost_15pct) / cost_50pct * 100` 计算，数值越小表示 70% 主要筹码成本区间越集中；如果数据日期当天筹码尚未更新，会回退到最近 5 个交易日内有 `cyq_perf` 数据的交易日。
 - 行业分类使用申万 2021 二级行业。
 - 行业字典来自 `index_classify(level="L2", src="SW2021")`。
 - 个股行业归属来自 `index_member_all(l2_code=..., is_new="Y/N")`。
@@ -93,4 +93,4 @@ Vercel 环境变量：
 - `GITHUB_DISPATCH_TOKEN`：有本仓库 Actions 读写权限的 GitHub token
 - `CRON_SECRET`：保护触发入口的随机密钥
 
-`vercel.json` 里配置为工作日 UTC 10:00 触发，也就是北京时间 18:00 这一小时内触发。
+`vercel.json` 里配置为 10 条工作日定时，分别对应北京时间 15:00-00:59 每小时触发一次。Vercel Hobby 计划会在对应小时内触发；GitHub Actions 另有工作日北京时间 20:10 的备用定时，用于补救 Vercel 触发失败或 Tushare 筹码数据延迟。

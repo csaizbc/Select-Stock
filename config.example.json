@@ -1,5 +1,5 @@
 {
   "default_age_days": 730,
   "default_suspend_window": 60,
-  "schedule_note": "Run after A-share close, for example 17:30 北京时间."
+  "schedule_note": "Vercel cron runs hourly from 15:00-00:59 北京时间 on weekdays; cyq_perf may update later than daily quotes."
 }
