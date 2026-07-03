@@ -1004,6 +1004,36 @@ def build_html(payload: dict) -> str:
       white-space: nowrap;
       font-weight: 650;
     }}
+    .sort-header {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      min-height: 0;
+      width: 100%;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+    }}
+    .sort-header:hover,
+    .sort-header.active {{
+      color: var(--accent);
+    }}
+    .sort-header:focus-visible {{
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }}
+    .sort-mark {{
+      min-width: 26px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      text-align: left;
+    }}
     tbody td {{
       padding: 9px;
       border-bottom: 1px solid #eef1f4;
@@ -1150,9 +1180,9 @@ def build_html(payload: dict) -> str:
             <th>申万二级行业</th>
             <th>上市日期</th>
             <th class="num">上市年限</th>
-            <th class="num">最新收盘价</th>
-            <th class="num">当日涨跌幅</th>
-            <th class="num">筹码集中度</th>
+            <th class="num"><button type="button" class="sort-header" data-sort-field="price">最新收盘价<span class="sort-mark" aria-hidden="true"></span></button></th>
+            <th class="num"><button type="button" class="sort-header" data-sort-field="pct">当日涨跌幅<span class="sort-mark" aria-hidden="true"></span></button></th>
+            <th class="num"><button type="button" class="sort-header" data-sort-field="chip">筹码集中度<span class="sort-mark" aria-hidden="true"></span></button></th>
             <th>是否 ST</th>
             <th class="num">停牌天数</th>
             <th>最新行情</th>
@@ -1207,7 +1237,20 @@ def build_html(payload: dict) -> str:
       industryChart: document.getElementById('industryChart'),
       tableBody: document.getElementById('tableBody'),
       emptyState: document.getElementById('emptyState'),
+      sortHeaders: [...document.querySelectorAll('[data-sort-field]')],
     }};
+
+    const SORT_STATES = {{
+      price: {{ asc: 'price_asc', desc: 'price_desc' }},
+      pct: {{ asc: 'asc', desc: 'desc' }},
+      chip: {{ asc: 'chip_asc', desc: 'chip_desc' }},
+    }};
+    const SORT_BY_VALUE = Object.fromEntries(
+      Object.entries(SORT_STATES).flatMap(([field, config]) => [
+        [config.asc, {{ field, direction: 'asc' }}],
+        [config.desc, {{ field, direction: 'desc' }}],
+      ]),
+    );
 
     function formatDate(value) {{
       if (!value || value.length !== 8) return value || '';
@@ -1286,6 +1329,28 @@ def build_html(payload: dict) -> str:
       if (state.pctSort === 'chip_desc') return list.sort(withNullLast((row) => row.chip_concentration_70, -1));
       if (state.pctSort === 'chip_asc') return list.sort(withNullLast((row) => row.chip_concentration_70, 1));
       return list.sort((a, b) => String(a.ts_code).localeCompare(String(b.ts_code)));
+    }}
+
+    function updateSortHeaders() {{
+      const active = SORT_BY_VALUE[state.pctSort];
+      for (const button of els.sortHeaders) {{
+        const mark = button.querySelector('.sort-mark');
+        const isActive = active && active.field === button.dataset.sortField;
+        button.classList.toggle('active', Boolean(isActive));
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        button.setAttribute('title', isActive ? `当前：${{active.direction === 'asc' ? '正序' : '反序'}}，点击切换排序` : '点击按此列正序排序');
+        if (mark) mark.textContent = isActive ? (active.direction === 'asc' ? '正序' : '反序') : '';
+      }}
+    }}
+
+    function toggleColumnSort(field) {{
+      const config = SORT_STATES[field];
+      if (!config) return;
+      if (state.pctSort === config.asc) state.pctSort = config.desc;
+      else if (state.pctSort === config.desc) state.pctSort = 'code';
+      else state.pctSort = config.asc;
+      els.pctSort.value = state.pctSort;
+      render();
     }}
 
     function filterByDisplayStatus(list) {{
@@ -1379,6 +1444,7 @@ def build_html(payload: dict) -> str:
       els.shownCount.textContent = String(shownRows.length);
       els.totalCount.textContent = String(rows.length);
       els.emptyState.hidden = shownRows.length > 0;
+      updateSortHeaders();
       renderIndustryChart(chartRows);
 
       els.tableBody.innerHTML = shownRows.map((row) => `
@@ -1492,6 +1558,9 @@ def build_html(payload: dict) -> str:
       if (!item || !els.industryChart.contains(item)) return;
       selectIndustryFromChart(item.dataset.industry);
     }});
+    for (const button of els.sortHeaders) {{
+      button.addEventListener('click', () => toggleColumnSort(button.dataset.sortField));
+    }}
     els.searchBox.addEventListener('input', syncStateFromControls);
     els.resetBtn.addEventListener('click', resetDefaults);
     els.exportBtn.addEventListener('click', exportCsv);
