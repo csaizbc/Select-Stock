@@ -84,7 +84,7 @@ output/
 当前推荐用 Vercel Cron 调用仓库里的 API：
 
 ```text
-api/trigger_github_action.js
+api/trigger_github_action.py
 vercel.json
 ```
 
