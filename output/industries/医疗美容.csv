@@ -1,4 +1,4 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-300896.SZ,300896,300896,爱美客,创业板,深市,创业板,801980.SI,美容护理,801983.SI,医疗美容,医疗美容,L,20200928,2110,5.78,85.89,-1.139,15.789,False,True,True,0,0,0,0,True,
-688363.SH,688363,688363,华熙生物,科创板,沪市,科创板,801980.SI,美容护理,801983.SI,医疗美容,医疗美容,L,20191106,2437,6.67,34.95,-0.086,28.571,False,True,True,0,0,0,0,True,
-920982.BJ,920982,920982,锦波生物,北交所,北交所,北交所,801980.SI,美容护理,801983.SI,医疗美容,医疗美容,L,20230720,1085,2.97,115.3,-3.036,36.111,False,True,True,0,0,0,0,True,
+300896.SZ,300896,300896,爱美客,创业板,深市,创业板,801980.SI,美容护理,801983.SI,医疗美容,医疗美容,L,20200928,2111,5.78,89.45,4.145,15.789,False,True,True,0,0,0,0,True,
+688363.SH,688363,688363,华熙生物,科创板,沪市,科创板,801980.SI,美容护理,801983.SI,医疗美容,医疗美容,L,20191106,2438,6.67,35.71,2.175,28.571,False,True,True,0,0,0,0,True,
+920982.BJ,920982,920982,锦波生物,北交所,北交所,北交所,801980.SI,美容护理,801983.SI,医疗美容,医疗美容,L,20230720,1086,2.97,118.2,2.515,36.111,False,True,True,0,0,0,0,True,
