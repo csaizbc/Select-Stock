@@ -4,7 +4,7 @@
     "data_date": "20260710",
     "chip_data_date": "20260710",
     "target_trade_date": "20260713",
-    "generated_at": "2026-07-12 19:13:16 北京时间",
+    "generated_at": "2026-07-12 19:26:34 北京时间",
     "row_count": 5530,
     "suspend_windows": [
       20,
@@ -150,108 +150,6 @@
     ]
   },
   "rows": [
-    {
-      "ts_code": "000892.SZ",
-      "score": 90,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 4.2,
-      "pct_chg": 9.95,
-      "ret5": 22.81,
-      "ret10": 27.27,
-      "ret20": 17.98,
-      "ma5": 3.78,
-      "ma10": 3.62,
-      "ma20": 3.59,
-      "distance_high20": 8.81,
-      "volume_ratio": 1.52,
-      "close_position": 100.0,
-      "amount_yi": 5.75,
-      "high60": 6.67,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 20,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "欢瑞世纪",
-      "board": "主板",
-      "industry": "影视院线"
-    },
-    {
-      "ts_code": "002317.SZ",
-      "score": 90,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 29.54,
-      "pct_chg": 10.02,
-      "ret5": 7.65,
-      "ret10": 30.77,
-      "ret20": 29.79,
-      "ma5": 27.64,
-      "ma10": 26.82,
-      "ma20": 24.66,
-      "distance_high20": 0.17,
-      "volume_ratio": 1.27,
-      "close_position": 100.0,
-      "amount_yi": 20.42,
-      "high60": 29.49,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 20,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "众生药业",
-      "board": "主板",
-      "industry": "中药Ⅱ"
-    },
-    {
-      "ts_code": "003020.SZ",
-      "score": 90,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 18.74,
-      "pct_chg": 9.98,
-      "ret5": 15.32,
-      "ret10": 27.83,
-      "ret20": 22.4,
-      "ma5": 16.7,
-      "ma10": 16.21,
-      "ma20": 15.77,
-      "distance_high20": 9.98,
-      "volume_ratio": 1.89,
-      "close_position": 100.0,
-      "amount_yi": 3.24,
-      "high60": 24.63,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 20,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "立方制药",
-      "board": "主板",
-      "industry": "化学制药"
-    },
     {
       "ts_code": "600129.SH",
       "score": 90.0,
@@ -695,40 +593,6 @@
       "industry": "影视院线"
     },
     {
-      "ts_code": "603322.SH",
-      "score": 85.4,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 31.06,
-      "pct_chg": 9.99,
-      "ret5": 4.9,
-      "ret10": 22.86,
-      "ret20": 11.69,
-      "ma5": 28.81,
-      "ma10": 28.75,
-      "ma20": 28.63,
-      "distance_high20": 0.75,
-      "volume_ratio": 1.25,
-      "close_position": 100.0,
-      "amount_yi": 2.4,
-      "high60": 40.16,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 15.4,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "超讯科技",
-      "board": "主板",
-      "industry": "通信服务"
-    },
-    {
       "ts_code": "688111.SH",
       "score": 85.3,
       "patterns": [
@@ -797,39 +661,6 @@
       "industry": "电网设备"
     },
     {
-      "ts_code": "002687.SZ",
-      "score": 84.9,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 5.85,
-      "pct_chg": 9.76,
-      "ret5": 3.54,
-      "ret10": 29.42,
-      "ret20": 39.95,
-      "ma5": 5.46,
-      "ma10": 5.41,
-      "ma20": 4.92,
-      "distance_high20": -2.5,
-      "volume_ratio": 1.32,
-      "close_position": 98.4,
-      "amount_yi": 2.4,
-      "high60": 6.0,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 20,
-        "突破": 10,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 4.9,
-        "风险扣分": 0
-      },
-      "name": "乔治白",
-      "board": "主板",
-      "industry": "服装家纺"
-    },
-    {
       "ts_code": "002541.SZ",
       "score": 84.4,
       "patterns": [
@@ -862,39 +693,6 @@
       "name": "鸿路钢构",
       "board": "主板",
       "industry": "专业工程"
-    },
-    {
-      "ts_code": "603127.SH",
-      "score": 84.4,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 43.22,
-      "pct_chg": 10.0,
-      "ret5": 6.56,
-      "ret10": 16.56,
-      "ret20": 37.69,
-      "ma5": 40.18,
-      "ma10": 39.98,
-      "ma20": 37.63,
-      "distance_high20": -0.83,
-      "volume_ratio": 1.39,
-      "close_position": 100.0,
-      "amount_yi": 22.73,
-      "high60": 43.58,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 19.4,
-        "突破": 10,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "昭衍新药",
-      "board": "主板",
-      "industry": "医疗服务"
     },
     {
       "ts_code": "688319.SH",
@@ -1030,74 +828,6 @@
       "name": "奇安信",
       "board": "科创板",
       "industry": "软件开发"
-    },
-    {
-      "ts_code": "600664.SH",
-      "score": 83.7,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 3.37,
-      "pct_chg": 10.13,
-      "ret5": 7.32,
-      "ret10": 15.02,
-      "ret20": 9.06,
-      "ma5": 3.15,
-      "ma10": 3.12,
-      "ma20": 3.11,
-      "distance_high20": 2.74,
-      "volume_ratio": 1.77,
-      "close_position": 100.0,
-      "amount_yi": 3.37,
-      "high60": 4.88,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 13.7,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "哈药股份",
-      "board": "主板",
-      "industry": "化学制药"
-    },
-    {
-      "ts_code": "600879.SH",
-      "score": 83.3,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 23.29,
-      "pct_chg": 10.01,
-      "ret5": 4.58,
-      "ret10": 16.33,
-      "ret20": 15.76,
-      "ma5": 21.48,
-      "ma10": 21.31,
-      "ma20": 20.56,
-      "distance_high20": -0.17,
-      "volume_ratio": 1.5,
-      "close_position": 100.0,
-      "amount_yi": 58.17,
-      "high60": 27.35,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 13.3,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "航天电子",
-      "board": "主板",
-      "industry": "航天装备Ⅱ"
     },
     {
       "ts_code": "300474.SZ",
@@ -1366,40 +1096,6 @@
       "industry": "软件开发"
     },
     {
-      "ts_code": "600428.SH",
-      "score": 80.8,
-      "patterns": [
-        "趋势强势",
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 8.99,
-      "pct_chg": 10.04,
-      "ret5": 4.17,
-      "ret10": 11.12,
-      "ret20": 14.81,
-      "ma5": 8.46,
-      "ma10": 8.37,
-      "ma20": 8.23,
-      "distance_high20": 2.86,
-      "volume_ratio": 1.34,
-      "close_position": 100.0,
-      "amount_yi": 3.63,
-      "high60": 9.33,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 10.8,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "中远海特",
-      "board": "主板",
-      "industry": "航运港口"
-    },
-    {
       "ts_code": "300640.SZ",
       "score": 80.5,
       "patterns": [
@@ -1532,39 +1228,6 @@
       "name": "驱动力",
       "board": "北交所",
       "industry": "动物保健Ⅱ"
-    },
-    {
-      "ts_code": "000048.SZ",
-      "score": 77.7,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 24.1,
-      "pct_chg": 10.0,
-      "ret5": 13.47,
-      "ret10": 10.91,
-      "ret20": 22.9,
-      "ma5": 22.21,
-      "ma10": 22.04,
-      "ma20": 20.98,
-      "distance_high20": 3.3,
-      "volume_ratio": 0.98,
-      "close_position": 100.0,
-      "amount_yi": 5.34,
-      "high60": 23.33,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 19.7,
-        "突破": 10,
-        "量价": 8,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "京基智农",
-      "board": "主板",
-      "industry": "养殖业"
     },
     {
       "ts_code": "603087.SH",
@@ -2174,39 +1837,6 @@
       "industry": "通信设备"
     },
     {
-      "ts_code": "688523.SH",
-      "score": 73.7,
-      "patterns": [
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 61.18,
-      "pct_chg": 20.01,
-      "ret5": 4.07,
-      "ret10": 18.8,
-      "ret20": 14.85,
-      "ma5": 52.95,
-      "ma10": 52.96,
-      "ma20": 52.62,
-      "distance_high20": 1.98,
-      "volume_ratio": 1.63,
-      "close_position": 100.0,
-      "amount_yi": 9.3,
-      "high60": 90.45,
-      "score_detail": {
-        "趋势": 15,
-        "动量": 13.7,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "航天环宇",
-      "board": "科创板",
-      "industry": "航天装备Ⅱ"
-    },
-    {
       "ts_code": "002236.SZ",
       "score": 73.6,
       "patterns": [
@@ -2404,39 +2034,6 @@
       "name": "博腾股份",
       "board": "创业板",
       "industry": "医疗服务"
-    },
-    {
-      "ts_code": "600118.SH",
-      "score": 72.8,
-      "patterns": [
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 90.02,
-      "pct_chg": 10.0,
-      "ret5": 4.31,
-      "ret10": 15.75,
-      "ret20": 15.37,
-      "ma5": 82.48,
-      "ma10": 82.89,
-      "ma20": 78.9,
-      "distance_high20": 1.29,
-      "volume_ratio": 1.27,
-      "close_position": 100.0,
-      "amount_yi": 53.1,
-      "high60": 119.5,
-      "score_detail": {
-        "趋势": 15,
-        "动量": 12.8,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "中国卫星",
-      "board": "主板",
-      "industry": "航天装备Ⅱ"
     },
     {
       "ts_code": "002558.SZ",
@@ -2737,39 +2334,6 @@
       "name": "杭州园林",
       "board": "创业板",
       "industry": "基础建设"
-    },
-    {
-      "ts_code": "002693.SZ",
-      "score": 70.5,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 10.45,
-      "pct_chg": 10.0,
-      "ret5": 2.25,
-      "ret10": 26.21,
-      "ret20": 16.11,
-      "ma5": 9.85,
-      "ma10": 9.84,
-      "ma20": 9.3,
-      "distance_high20": -7.28,
-      "volume_ratio": 1.61,
-      "close_position": 100.0,
-      "amount_yi": 5.88,
-      "high60": 12.43,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 15.5,
-        "突破": 0,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "双成药业",
-      "board": "主板",
-      "industry": "化学制药"
     },
     {
       "ts_code": "603818.SH",
@@ -3500,39 +3064,6 @@
       "industry": "通信设备"
     },
     {
-      "ts_code": "002548.SZ",
-      "score": 66.6,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 4.19,
-      "pct_chg": 9.97,
-      "ret5": 3.46,
-      "ret10": 19.37,
-      "ret20": 5.28,
-      "ma5": 4.0,
-      "ma10": 3.96,
-      "ma20": 3.88,
-      "distance_high20": -3.68,
-      "volume_ratio": 1.34,
-      "close_position": 100.0,
-      "amount_yi": 1.72,
-      "high60": 5.48,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 11.6,
-        "突破": 0,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "金新农",
-      "board": "主板",
-      "industry": "饲料"
-    },
-    {
       "ts_code": "600539.SH",
       "score": 66.6,
       "patterns": [
@@ -4097,39 +3628,6 @@
       "industry": "IT服务Ⅱ"
     },
     {
-      "ts_code": "002414.SZ",
-      "score": 65,
-      "patterns": [
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 14.64,
-      "pct_chg": 9.99,
-      "ret5": 15.64,
-      "ret10": 11.16,
-      "ret20": 15.73,
-      "ma5": 13.02,
-      "ma10": 12.93,
-      "ma20": 13.25,
-      "distance_high20": 4.42,
-      "volume_ratio": 2.49,
-      "close_position": 100.0,
-      "amount_yi": 29.79,
-      "high60": 15.52,
-      "score_detail": {
-        "趋势": 0,
-        "动量": 20,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "高德红外",
-      "board": "主板",
-      "industry": "军工电子Ⅱ"
-    },
-    {
       "ts_code": "600267.SH",
       "score": 65.0,
       "patterns": [
@@ -4161,39 +3659,6 @@
       "name": "海正药业",
       "board": "主板",
       "industry": "化学制药"
-    },
-    {
-      "ts_code": "600992.SH",
-      "score": 65,
-      "patterns": [
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 10.65,
-      "pct_chg": 10.02,
-      "ret5": 13.3,
-      "ret10": 21.44,
-      "ret20": 6.39,
-      "ma5": 9.34,
-      "ma10": 9.1,
-      "ma20": 9.33,
-      "distance_high20": 0.09,
-      "volume_ratio": 2.04,
-      "close_position": 100.0,
-      "amount_yi": 1.78,
-      "high60": 13.5,
-      "score_detail": {
-        "趋势": 0,
-        "动量": 20,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "贵绳股份",
-      "board": "主板",
-      "industry": "通用设备"
     },
     {
       "ts_code": "603456.SH",
@@ -4361,39 +3826,6 @@
       "name": "千红制药",
       "board": "主板",
       "industry": "化学制药"
-    },
-    {
-      "ts_code": "002524.SZ",
-      "score": 64.0,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 3.78,
-      "pct_chg": 9.88,
-      "ret5": 3.85,
-      "ret10": 12.17,
-      "ret20": 5.29,
-      "ma5": 3.55,
-      "ma10": 3.53,
-      "ma20": 3.51,
-      "distance_high20": -3.32,
-      "volume_ratio": 1.88,
-      "close_position": 100.0,
-      "amount_yi": 1.27,
-      "high60": 4.55,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 9.0,
-        "突破": 0,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "光正眼科",
-      "board": "主板",
-      "industry": "医疗服务"
     },
     {
       "ts_code": "300684.SZ",
@@ -5956,39 +5388,6 @@
       "industry": "汽车零部件"
     },
     {
-      "ts_code": "600685.SH",
-      "score": 58.9,
-      "patterns": [
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 28.6,
-      "pct_chg": 10.0,
-      "ret5": 5.65,
-      "ret10": 16.45,
-      "ret20": 13.85,
-      "ma5": 26.84,
-      "ma10": 26.36,
-      "ma20": 26.38,
-      "distance_high20": 3.81,
-      "volume_ratio": 1.58,
-      "close_position": 100.0,
-      "amount_yi": 5.37,
-      "high60": 33.53,
-      "score_detail": {
-        "趋势": 0,
-        "动量": 13.9,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "收盘质量": 5,
-        "风险扣分": 0
-      },
-      "name": "中船防务",
-      "board": "主板",
-      "industry": "航海装备Ⅱ"
-    },
-    {
       "ts_code": "688235.SH",
       "score": 58.9,
       "patterns": [
@@ -6816,6 +6215,303 @@
       "name": "豪威集团",
       "board": "主板",
       "industry": "半导体"
+    },
+    {
+      "ts_code": "688591.SH",
+      "score": 55.6,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 34.66,
+      "pct_chg": -1.95,
+      "ret5": -0.77,
+      "ret10": 7.24,
+      "ret20": 16.39,
+      "ma5": 34.46,
+      "ma10": 34.32,
+      "ma20": 33.73,
+      "distance_high20": -5.46,
+      "volume_ratio": 1.21,
+      "close_position": 0.0,
+      "amount_yi": 3.36,
+      "high60": 42.78,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 5.6,
+        "突破": 0,
+        "量价": 15,
+        "流动性": 10,
+        "收盘质量": 0,
+        "风险扣分": 0
+      },
+      "name": "泰凌微",
+      "board": "科创板",
+      "industry": "半导体"
+    },
+    {
+      "ts_code": "300717.SZ",
+      "score": 55.5,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 24.1,
+      "pct_chg": -3.29,
+      "ret5": 9.65,
+      "ret10": 9.55,
+      "ret20": 39.31,
+      "ma5": 23.76,
+      "ma10": 22.71,
+      "ma20": 20.47,
+      "distance_high20": -6.48,
+      "volume_ratio": 0.72,
+      "close_position": 22.5,
+      "amount_yi": 1.79,
+      "high60": 25.77,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 19.4,
+        "突破": 0,
+        "量价": 0,
+        "流动性": 10,
+        "收盘质量": 1.1,
+        "风险扣分": 0
+      },
+      "name": "华信新材",
+      "board": "创业板",
+      "industry": "塑料"
+    },
+    {
+      "ts_code": "002603.SZ",
+      "score": 55.4,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 15.51,
+      "pct_chg": 2.11,
+      "ret5": -0.7,
+      "ret10": 5.8,
+      "ret20": 1.84,
+      "ma5": 15.44,
+      "ma10": 15.41,
+      "ma20": 15.34,
+      "distance_high20": -3.24,
+      "volume_ratio": 1.35,
+      "close_position": 66.3,
+      "amount_yi": 3.63,
+      "high60": 17.78,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 2.1,
+        "突破": 0,
+        "量价": 15,
+        "流动性": 10,
+        "收盘质量": 3.3,
+        "风险扣分": 0
+      },
+      "name": "以岭药业",
+      "board": "主板",
+      "industry": "中药Ⅱ"
+    },
+    {
+      "ts_code": "002174.SZ",
+      "score": 55.2,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 12.74,
+      "pct_chg": 1.84,
+      "ret5": 3.33,
+      "ret10": 4.51,
+      "ret20": 28.3,
+      "ma5": 12.43,
+      "ma10": 12.37,
+      "ma20": 12.12,
+      "distance_high20": -4.43,
+      "volume_ratio": 1.09,
+      "close_position": 42.6,
+      "amount_yi": 7.56,
+      "high60": 13.33,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 10.1,
+        "突破": 0,
+        "量价": 8,
+        "流动性": 10,
+        "收盘质量": 2.1,
+        "风险扣分": 0
+      },
+      "name": "游族网络",
+      "board": "主板",
+      "industry": "游戏Ⅱ"
+    },
+    {
+      "ts_code": "002536.SZ",
+      "score": 55.1,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 52.84,
+      "pct_chg": 0.28,
+      "ret5": 1.69,
+      "ret10": 9.81,
+      "ret20": 30.6,
+      "ma5": 52.68,
+      "ma10": 50.26,
+      "ma20": 48.13,
+      "distance_high20": -7.56,
+      "volume_ratio": 1.11,
+      "close_position": 14.3,
+      "amount_yi": 30.15,
+      "high60": 57.16,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 11.4,
+        "突破": 0,
+        "量价": 8,
+        "流动性": 10,
+        "收盘质量": 0.7,
+        "风险扣分": 0
+      },
+      "name": "飞龙股份",
+      "board": "主板",
+      "industry": "汽车零部件"
+    },
+    {
+      "ts_code": "301257.SZ",
+      "score": 55.1,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 50.18,
+      "pct_chg": 6.58,
+      "ret5": -3.96,
+      "ret10": 16.21,
+      "ret20": 23.5,
+      "ma5": 49.19,
+      "ma10": 49.1,
+      "ma20": 45.02,
+      "distance_high20": -17.28,
+      "volume_ratio": 1.1,
+      "close_position": 83.0,
+      "amount_yi": 4.01,
+      "high60": 60.66,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 8.0,
+        "突破": 0,
+        "量价": 8,
+        "流动性": 10,
+        "收盘质量": 4.1,
+        "风险扣分": 0
+      },
+      "name": "普蕊斯",
+      "board": "创业板",
+      "industry": "医疗服务"
+    },
+    {
+      "ts_code": "301316.SZ",
+      "score": 55.1,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 43.7,
+      "pct_chg": -2.5,
+      "ret5": 0.44,
+      "ret10": 15.67,
+      "ret20": 24.89,
+      "ma5": 42.41,
+      "ma10": 41.0,
+      "ma20": 40.33,
+      "distance_high20": -5.57,
+      "volume_ratio": 1.11,
+      "close_position": 10.6,
+      "amount_yi": 10.81,
+      "high60": 61.47,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 11.6,
+        "突破": 0,
+        "量价": 8,
+        "流动性": 10,
+        "收盘质量": 0.5,
+        "风险扣分": 0
+      },
+      "name": "慧博云通",
+      "board": "创业板",
+      "industry": "IT服务Ⅱ"
+    },
+    {
+      "ts_code": "001201.SZ",
+      "score": 55.0,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 11.75,
+      "pct_chg": 2.17,
+      "ret5": 2.71,
+      "ret10": 12.76,
+      "ret20": 6.43,
+      "ma5": 11.59,
+      "ma10": 11.4,
+      "ma20": 11.11,
+      "distance_high20": -2.33,
+      "volume_ratio": 0.99,
+      "close_position": 68.6,
+      "amount_yi": 0.38,
+      "high60": 13.79,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 8.6,
+        "突破": 10,
+        "量价": 8,
+        "流动性": 0,
+        "收盘质量": 3.4,
+        "风险扣分": 0
+      },
+      "name": "东瑞股份",
+      "board": "主板",
+      "industry": "养殖业"
+    },
+    {
+      "ts_code": "002755.SZ",
+      "score": 55.0,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 14.75,
+      "pct_chg": 3.36,
+      "ret5": -2.58,
+      "ret10": 18.0,
+      "ret20": 16.05,
+      "ma5": 14.64,
+      "ma10": 14.46,
+      "ma20": 13.67,
+      "distance_high20": -5.99,
+      "volume_ratio": 0.93,
+      "close_position": 73.8,
+      "amount_yi": 1.98,
+      "high60": 18.1,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 8.3,
+        "突破": 0,
+        "量价": 8,
+        "流动性": 10,
+        "收盘质量": 3.7,
+        "风险扣分": 0
+      },
+      "name": "奥赛康",
+      "board": "主板",
+      "industry": "化学制药"
     }
   ]
 }
