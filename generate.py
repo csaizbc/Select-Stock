@@ -19,6 +19,10 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import tushare as ts
 
+from strength import HISTORY_DAYS, build_strength_rows, fetch_price_history, write_strength_json
+from strength_page import build_strength_html
+from backtest import update_backtest
+
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_OUTPUT = ROOT / "dist" / "tomorrow_stock_list.html"
@@ -32,7 +36,7 @@ TIME_SYNC_URLS = (
     "https://www.baidu.com",
     "https://www.qq.com",
 )
-MAX_SUSPEND_WINDOW = 90
+MAX_SUSPEND_WINDOW = HISTORY_DAYS
 SUSPEND_WINDOWS = (20, 40, 60, 90)
 CHIP_LOOKBACK_DAYS = 5
 DEFAULT_AGE_DAYS = 730
@@ -1104,6 +1108,7 @@ def build_html(payload: dict) -> str:
 <body>
   <header>
     <h1>明日股票列表</h1>
+    <div style="margin:10px 0"><a href="index.html" style="color:#fff;font-weight:700">← 查看短线强势榜</a></div>
     <div class="meta">
       <span>数据日期：<strong id="dataDate"></strong></span>
       <span>筹码日期：<strong id="chipDate"></strong></span>
@@ -1604,6 +1609,8 @@ def build_payload(as_of_date: str | None, cache_dir: Path, refresh_industry: boo
     rows, chip_data_date = build_stock_rows(pro, context, daily, cache_dir=cache_dir, refresh_industry=refresh_industry)
     generated_at = current_beijing_timestamp()
     industry_names = sorted({row.get("sw_l2_display") or "未分类" for row in rows})
+    history = fetch_price_history(pro, context.recent_trade_dates, cache_dir, call_with_retry)
+    strength_rows = build_strength_rows(history, rows)
     return {
         "meta": {
             "as_of_date": context.as_of_date,
@@ -1618,6 +1625,7 @@ def build_payload(as_of_date: str | None, cache_dir: Path, refresh_industry: boo
             "industries": industry_names,
         },
         "rows": rows,
+        "strength_rows": strength_rows,
     }
 
 
@@ -1626,7 +1634,8 @@ def write_html(payload: dict, output_path: Path) -> None:
     html = build_html(payload)
     output_path.write_text(html, encoding="utf-8")
     if output_path.resolve() == DEFAULT_OUTPUT.resolve():
-        DEFAULT_INDEX_OUTPUT.write_text(html, encoding="utf-8")
+        strength_payload = {"meta": payload["meta"], "rows": payload.get("strength_rows", [])}
+        DEFAULT_INDEX_OUTPUT.write_text(build_strength_html(strength_payload), encoding="utf-8")
 
 
 def parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
@@ -1653,6 +1662,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     if not data_output_dir.is_absolute():
         data_output_dir = ROOT / data_output_dir
     summary = write_data_outputs(payload, data_output_dir)
+    write_strength_json(payload.get("strength_rows", []), payload["meta"], data_output_dir / "strength_candidates.json")
+    backtest_summary = update_backtest(cache_dir, payload.get("strength_rows", []), payload["meta"]["data_date"], data_output_dir)
     meta = payload["meta"]
     print(f"output: {output_path}")
     if output_path.resolve() == DEFAULT_OUTPUT.resolve():
@@ -1663,6 +1674,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     print(f"rows: {meta['row_count']}")
     print(f"default_passed: {summary['default_passed_count']}")
     print(f"default_excluded: {summary['default_excluded_count']}")
+    print(f"strength_candidates: {len(payload.get('strength_rows', []))}")
+    print(f"backtest_samples_5d: {backtest_summary['samples']['5d']['count']}")
     return 0
 
 
