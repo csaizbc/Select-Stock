@@ -78,6 +78,8 @@ def _score_group(group: pd.DataFrame) -> dict | None:
     breakout_score = 15 if breakout else (10 if distance_high20 >= -3 else 0)
     volume_score = 15 if 1.2 <= volume_ratio <= 2.5 else (8 if 0.8 <= volume_ratio < 1.2 else 0)
     liquidity_score = 10 if float(latest.amount) >= 100_000 else (5 if float(latest.amount) >= 50_000 else 0)
+    price = float(latest.close)
+    price_score = 10 if price <= 8 else 8 if price <= 12 else 6 if price <= 15 else 3 if price <= 20 else 0
     close_score = round(max(0, min(5, close_position * 5)), 1)
     risk_penalty = 0
     risks: list[str] = []
@@ -88,7 +90,7 @@ def _score_group(group: pd.DataFrame) -> dict | None:
         risk_penalty += 10; risks.append("短期涨幅过大")
     if volume_ratio > 3:
         risk_penalty += 8; risks.append("成交量异常放大")
-    score = round(trend_score + momentum_score + breakout_score + volume_score + liquidity_score + close_score - risk_penalty, 1)
+    score = round(trend_score + momentum_score + breakout_score + volume_score + liquidity_score + price_score + close_score - risk_penalty, 1)
     patterns = [name for ok, name in [(trend, "趋势强势"), (breakout, "平台突破"), (pullback, "缩量回踩")] if ok]
     if not patterns or score < 55 or not (-5 <= ret5 <= 25) or ret20 > 45:
         return None
@@ -101,7 +103,8 @@ def _score_group(group: pd.DataFrame) -> dict | None:
         "close_position": round(close_position * 100, 1), "amount_yi": round(float(latest.amount) / 100_000, 2),
         "high60": round(high60_prev, 2),
         "score_detail": {"趋势": trend_score, "动量": round(momentum_score, 1), "突破": breakout_score,
-                         "量价": volume_score, "流动性": liquidity_score, "收盘质量": close_score, "风险扣分": risk_penalty},
+                         "量价": volume_score, "流动性": liquidity_score, "低价": price_score,
+                         "收盘质量": close_score, "风险扣分": risk_penalty},
     }
 
 
