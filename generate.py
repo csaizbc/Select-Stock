@@ -19,7 +19,7 @@ from zoneinfo import ZoneInfo
 import pandas as pd
 import tushare as ts
 
-from strength import HISTORY_DAYS, build_strength_rows, fetch_price_history, write_strength_json
+from strength import HISTORY_DAYS, build_strength_rows, fetch_fundamentals, fetch_price_history, write_strength_json
 from strength_page import build_strength_html
 from backtest import update_backtest
 
@@ -1610,7 +1610,8 @@ def build_payload(as_of_date: str | None, cache_dir: Path, refresh_industry: boo
     generated_at = current_beijing_timestamp()
     industry_names = sorted({row.get("sw_l2_display") or "未分类" for row in rows})
     history = fetch_price_history(pro, context.recent_trade_dates, cache_dir, call_with_retry)
-    strength_rows = build_strength_rows(history, rows)
+    fundamentals = fetch_fundamentals(pro, context.data_date, cache_dir)
+    strength_rows = build_strength_rows(history, rows, fundamentals)
     return {
         "meta": {
             "as_of_date": context.as_of_date,

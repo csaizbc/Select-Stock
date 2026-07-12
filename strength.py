@@ -11,6 +11,44 @@ MIN_HISTORY_DAYS = 60
 TOP_LIMIT = 200
 
 
+def fetch_fundamentals(pro, data_date: str, cache_dir: Path) -> dict[str, dict]:
+    """Fetch the latest two available quarter snapshots and cache slow-changing fundamentals."""
+    cache_file = cache_dir / "fundamentals.json"
+    cached = json.loads(cache_file.read_text(encoding="utf-8")) if cache_file.exists() else {}
+    year = int(data_date[:4])
+    candidates = []
+    for y in range(year, year - 2, -1):
+        candidates.extend([(f"{y}0930", f"{y}1031"), (f"{y}0630", f"{y}0831"),
+                           (f"{y}0331", f"{y}0430"), (f"{y - 1}1231", f"{y}0430")])
+    wanted = [period for period, available_by in candidates if available_by <= data_date][:2]
+    if cached.get("periods") == wanted and cached.get("rows"):
+        return cached["rows"]
+    frames = []
+    fields = "ts_code,end_date,roe,netprofit_yoy,or_yoy,debt_to_assets"
+    for period in wanted:
+        try:
+            frame = pro.fina_indicator_vip(period=period, fields=fields)
+        except Exception:
+            try:
+                frame = pro.fina_indicator(period=period, fields=fields)
+            except Exception:
+                continue
+        if frame is not None and not frame.empty:
+            frames.append(frame)
+    if not frames:
+        return cached.get("rows", {})
+    frame = pd.concat(frames, ignore_index=True).sort_values("end_date", ascending=False).drop_duplicates("ts_code")
+    rows = {}
+    for row in frame.itertuples(index=False):
+        rows[row.ts_code] = {key: (None if pd.isna(value) else round(float(value), 2)) for key, value in {
+            "roe": row.roe, "netprofit_yoy": row.netprofit_yoy, "revenue_yoy": row.or_yoy,
+            "debt_to_assets": row.debt_to_assets}.items()}
+        rows[row.ts_code]["report_period"] = str(row.end_date)
+    cache_file.parent.mkdir(parents=True, exist_ok=True)
+    cache_file.write_text(json.dumps({"periods": wanted, "rows": rows}, ensure_ascii=False), encoding="utf-8")
+    return rows
+
+
 def _is_limit_up(pct_chg: float, board: str) -> bool:
     """Conservative tradability filter; buffers absorb quote rounding."""
     threshold = 29.5 if board == "北交所" else 19.5 if board in {"创业板", "科创板"} else 9.5
@@ -93,7 +131,7 @@ def _score_group(group: pd.DataFrame) -> dict | None:
     score = round(trend_score + momentum_score + breakout_score + volume_score + liquidity_score + price_score + close_score - risk_penalty, 1)
     patterns = [name for ok, name in [(trend, "趋势强势"), (breakout, "平台突破"), (pullback, "缩量回踩")] if ok]
     # Keep near-threshold rows until chip concentration is added from metadata.
-    if not patterns or score < 45 or not (-5 <= ret5 <= 25) or ret20 > 45:
+    if not patterns or score < 30 or not (-5 <= ret5 <= 25) or ret20 > 45:
         return None
     return {
         "ts_code": latest.ts_code, "score": score, "patterns": patterns, "risk_flags": risks,
@@ -109,7 +147,7 @@ def _score_group(group: pd.DataFrame) -> dict | None:
     }
 
 
-def build_strength_rows(history: pd.DataFrame, stock_rows: list[dict]) -> list[dict]:
+def build_strength_rows(history: pd.DataFrame, stock_rows: list[dict], fundamentals: dict[str, dict] | None = None) -> list[dict]:
     if history.empty:
         return []
     metadata = {row["ts_code"]: row for row in stock_rows}
@@ -127,6 +165,15 @@ def build_strength_rows(history: pd.DataFrame, stock_rows: list[dict]) -> list[d
         item["chip_concentration_70"] = concentration
         item["score_detail"]["筹码集中"] = chip_score
         item["score"] = round(item["score"] + chip_score, 1)
+        fundamental = (fundamentals or {}).get(item["ts_code"], {})
+        roe, profit, revenue, debt = (fundamental.get(k) for k in ("roe", "netprofit_yoy", "revenue_yoy", "debt_to_assets"))
+        fundamental_score = (5 if roe is not None and roe >= 15 else 3 if roe is not None and roe >= 8 else 1 if roe is not None and roe > 0 else 0)
+        fundamental_score += 4 if profit is not None and profit >= 20 else 2 if profit is not None and profit > 0 else 0
+        fundamental_score += 3 if revenue is not None and revenue >= 15 else 1 if revenue is not None and revenue > 0 else 0
+        fundamental_score += 3 if debt is not None and debt <= 40 else 1 if debt is not None and debt <= 60 else 0
+        item.update(fundamental)
+        item["score_detail"]["基本面"] = fundamental_score
+        item["score"] = round(item["score"] + fundamental_score, 1)
         if item["score"] < 55:
             continue
         item.update({"name": meta["name"], "board": meta["board"], "industry": meta["sw_l2_display"]})
