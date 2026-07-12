@@ -27,6 +27,7 @@ h1{{margin:0;font-size:27px}}a.btn,button{{border:1px solid var(--line);backgrou
 <div class="rule"><b>动量 · 20分</b><br>综合5/10/20日涨幅；5日限定-5%～25%，20日超过45%剔除，避免追逐过度加速。</div>
 <div class="rule"><b>量价与流动性 · 25分</b><br>量比1.2～2.5得15分；成交额≥1亿元得10分（Tushare amount单位为千元）。</div>
 <div class="rule"><b>低价与仓位 · 10分</b><br>≤8元得10分，≤12元得8分，≤15元得6分，≤20元得3分。页面默认只展示20元以内。</div>
+<div class="rule"><b>筹码集中 · 10分</b><br>70%筹码成本区间集中度越小越好：≤10%得10分，≤20%得8分，≤30%得5分，≤40%得2分；数据缺失不加分。</div>
 <div class="rule"><b>收盘质量 · 5分</b><br>按收盘价处在当日高低区间的位置计分，越靠近最高价越高。</div>
 <div class="rule"><b>可交易性与风险</b><br>主板涨幅≥9.5%、创业板/科创板≥19.5%、北交所≥29.5%直接剔除；放量长上影-12，短期涨幅过大-10，量比超过3倍-8。结果仅用于研究，不构成投资建议。</div>
 </div></details><section class="tablebox"><table><thead><tr><th>排名</th><th>代码</th><th>名称</th><th>形态</th><th>行业</th><th data-k="score">评分</th><th>评分明细</th><th data-k="pct_chg">当日%</th><th data-k="ret5">5日%</th><th data-k="ret20">20日%</th><th data-k="volume_ratio">量比</th><th data-k="distance_high20">距20日高%</th><th>成交额(亿)</th><th>风险</th></tr></thead><tbody id="body"></tbody></table></section></main>

@@ -92,7 +92,8 @@ def _score_group(group: pd.DataFrame) -> dict | None:
         risk_penalty += 8; risks.append("成交量异常放大")
     score = round(trend_score + momentum_score + breakout_score + volume_score + liquidity_score + price_score + close_score - risk_penalty, 1)
     patterns = [name for ok, name in [(trend, "趋势强势"), (breakout, "平台突破"), (pullback, "缩量回踩")] if ok]
-    if not patterns or score < 55 or not (-5 <= ret5 <= 25) or ret20 > 45:
+    # Keep near-threshold rows until chip concentration is added from metadata.
+    if not patterns or score < 45 or not (-5 <= ret5 <= 25) or ret20 > 45:
         return None
     return {
         "ts_code": latest.ts_code, "score": score, "patterns": patterns, "risk_flags": risks,
@@ -118,6 +119,15 @@ def build_strength_rows(history: pd.DataFrame, stock_rows: list[dict]) -> list[d
         meta = metadata.get(item["ts_code"]) if item else None
         if (not item or not meta or meta.get("is_st") or not meta.get("has_latest_quote")
                 or meta.get("list_age_days", 0) < 120 or _is_limit_up(item["pct_chg"], meta.get("board", ""))):
+            continue
+        concentration = meta.get("chip_concentration_70")
+        chip_score = 0
+        if concentration is not None:
+            chip_score = 10 if concentration <= 10 else 8 if concentration <= 20 else 5 if concentration <= 30 else 2 if concentration <= 40 else 0
+        item["chip_concentration_70"] = concentration
+        item["score_detail"]["筹码集中"] = chip_score
+        item["score"] = round(item["score"] + chip_score, 1)
+        if item["score"] < 55:
             continue
         item.update({"name": meta["name"], "board": meta["board"], "industry": meta["sw_l2_display"]})
         results.append(item)
