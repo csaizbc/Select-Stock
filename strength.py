@@ -11,6 +11,12 @@ MIN_HISTORY_DAYS = 60
 TOP_LIMIT = 200
 
 
+def _is_limit_up(pct_chg: float, board: str) -> bool:
+    """Conservative tradability filter; buffers absorb quote rounding."""
+    threshold = 29.5 if board == "北交所" else 19.5 if board in {"创业板", "科创板"} else 9.5
+    return pct_chg >= threshold
+
+
 def fetch_price_history(pro, trade_dates: list[str], cache_dir: Path, call_with_retry) -> pd.DataFrame:
     """Load daily bars incrementally. One small cache file is kept per trading day."""
     daily_dir = cache_dir / "daily"
@@ -107,7 +113,8 @@ def build_strength_rows(history: pd.DataFrame, stock_rows: list[dict]) -> list[d
     for _, group in history.groupby("ts_code", sort=False):
         item = _score_group(group)
         meta = metadata.get(item["ts_code"]) if item else None
-        if not item or not meta or meta.get("is_st") or not meta.get("has_latest_quote") or meta.get("list_age_days", 0) < 120:
+        if (not item or not meta or meta.get("is_st") or not meta.get("has_latest_quote")
+                or meta.get("list_age_days", 0) < 120 or _is_limit_up(item["pct_chg"], meta.get("board", ""))):
             continue
         item.update({"name": meta["name"], "board": meta["board"], "industry": meta["sw_l2_display"]})
         results.append(item)
