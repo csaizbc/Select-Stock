@@ -1,12 +1,12 @@
 {
   "as_of_date": "20260713",
-  "data_date": "20260710",
-  "chip_data_date": "20260710",
-  "target_trade_date": "20260713",
-  "generated_at": "2026-07-13 15:22:22 北京时间",
+  "data_date": "20260713",
+  "chip_data_date": "20260713",
+  "target_trade_date": "20260714",
+  "generated_at": "2026-07-13 22:54:58 北京时间",
   "total_count": 5530,
-  "default_passed_count": 4965,
-  "default_excluded_count": 565,
+  "default_passed_count": 4966,
+  "default_excluded_count": 564,
   "board_counts": {
     "主板": 3194,
     "创业板": 1399,
@@ -19,13 +19,13 @@
     "深市": 2895
   },
   "default_passed_by_board": {
-    "主板": 2910,
+    "主板": 2911,
     "创业板": 1262,
     "北交所": 242,
     "科创板": 551
   },
   "default_excluded_by_board": {
-    "主板": 284,
+    "主板": 283,
     "创业板": 137,
     "北交所": 85,
     "科创板": 59
@@ -211,7 +211,7 @@
     "城商行Ⅱ": 17,
     "基础建设": 36,
     "塑料": 71,
-    "多元金融": 24,
+    "多元金融": 25,
     "家居用品": 63,
     "家电零部件Ⅱ": 32,
     "小家电": 21,
@@ -299,9 +299,9 @@
   },
   "unclassified_industry_count": 8,
   "reject_reason_counts": {
-    "近60日停牌": 249,
-    "无最新行情": 9,
-    "ST": 216,
+    "近60日停牌": 247,
+    "无最新行情": 6,
+    "ST": 211,
     "上市时间不足": 246
   },
   "default_age_days": 730,
