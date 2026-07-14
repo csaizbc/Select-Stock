@@ -1,12 +1,12 @@
 {
   "as_of_date": "20260714",
-  "data_date": "20260713",
-  "chip_data_date": "20260713",
-  "target_trade_date": "20260714",
-  "generated_at": "2026-07-14 15:25:38 北京时间",
+  "data_date": "20260714",
+  "chip_data_date": "20260714",
+  "target_trade_date": "20260715",
+  "generated_at": "2026-07-14 22:06:24 北京时间",
   "total_count": 5528,
-  "default_passed_count": 4966,
-  "default_excluded_count": 562,
+  "default_passed_count": 4965,
+  "default_excluded_count": 563,
   "board_counts": {
     "主板": 3192,
     "创业板": 1399,
@@ -19,13 +19,13 @@
     "深市": 2893
   },
   "default_passed_by_board": {
-    "主板": 2911,
+    "主板": 2910,
     "创业板": 1262,
     "北交所": 242,
     "科创板": 551
   },
   "default_excluded_by_board": {
-    "主板": 281,
+    "主板": 282,
     "创业板": 137,
     "北交所": 85,
     "科创板": 59
@@ -256,7 +256,7 @@
     "电力": 100,
     "电子化学品Ⅱ": 33,
     "电机Ⅱ": 24,
-    "电池": 101,
+    "电池": 100,
     "电网设备": 125,
     "电视广播Ⅱ": 14,
     "白色家电": 9,
@@ -299,10 +299,10 @@
   },
   "unclassified_industry_count": 8,
   "reject_reason_counts": {
-    "近60日停牌": 245,
-    "无最新行情": 6,
+    "近60日停牌": 246,
     "ST": 210,
-    "上市时间不足": 246
+    "上市时间不足": 246,
+    "无最新行情": 4
   },
   "default_age_days": 730,
   "default_suspend_window": 60
