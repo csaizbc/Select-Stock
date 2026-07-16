@@ -1,4 +1,4 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-002556.SZ,002556,002556,辉隆股份,主板,深市,主板,801010.SI,农林牧渔,801019.SI,农业综合Ⅱ,农业综合Ⅱ,L,20110302,5614,15.37,4.75,1.931,30.769,False,True,True,0,0,0,0,True,
-300021.SZ,300021,300021,大禹节水,创业板,深市,创业板,801010.SI,农林牧渔,801019.SI,农业综合Ⅱ,农业综合Ⅱ,L,20091030,6102,16.71,3.89,0.258,12.5,False,True,True,0,0,0,0,True,
-920964.BJ,920964,920964,润农节水,北交所,北交所,北交所,801010.SI,农林牧渔,801019.SI,农业综合Ⅱ,农业综合Ⅱ,L,20200727,2179,5.97,4.42,0.455,13.333,False,True,True,0,0,0,0,True,
+002556.SZ,002556,002556,辉隆股份,主板,深市,主板,801010.SI,农林牧渔,801019.SI,农业综合Ⅱ,农业综合Ⅱ,L,20110302,5615,15.37,4.75,0.0,30.769,False,True,True,0,0,0,0,True,
+300021.SZ,300021,300021,大禹节水,创业板,深市,创业板,801010.SI,农林牧渔,801019.SI,农业综合Ⅱ,农业综合Ⅱ,L,20091030,6103,16.71,3.88,-0.257,12.5,False,True,True,0,0,0,0,True,
+920964.BJ,920964,920964,润农节水,北交所,北交所,北交所,801010.SI,农林牧渔,801019.SI,农业综合Ⅱ,农业综合Ⅱ,L,20200727,2180,5.97,4.43,0.226,13.333,False,True,True,0,0,0,0,True,
