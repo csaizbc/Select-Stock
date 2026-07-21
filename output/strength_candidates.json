@@ -1,11 +1,11 @@
 {
   "meta": {
-    "as_of_date": "20260720",
+    "as_of_date": "20260721",
     "data_date": "20260720",
     "chip_data_date": "20260720",
     "target_trade_date": "20260721",
-    "generated_at": "2026-07-20 22:27:36 北京时间",
-    "row_count": 5528,
+    "generated_at": "2026-07-21 15:27:47 北京时间",
+    "row_count": 5529,
     "suspend_windows": [
       20,
       40,
