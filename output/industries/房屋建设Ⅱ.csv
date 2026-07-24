@@ -1,5 +1,5 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000628.SZ,000628,000628,高新发展,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19961118,10840,29.68,35.76,-1.488,16.667,False,True,True,0,0,0,0,True,
+000628.SZ,000628,000628,高新发展,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19961118,10840,29.68,35.76,-1.488,15.0,False,True,True,0,0,0,0,True,
 002761.SZ,002761,002761,浙江建投,主板,深市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20150610,4062,11.12,6.86,-2.695,29.412,False,True,True,0,0,0,0,True,
 600170.SH,600170,600170,上海建工,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,19980623,10258,28.08,2.3,-2.542,21.739,False,True,True,0,0,0,0,True,
 600248.SH,600248,600248,陕建股份,主板,沪市,主板,801720.SI,建筑装饰,801721.SI,房屋建设Ⅱ,房屋建设Ⅱ,L,20000622,9528,26.09,2.81,-2.431,25.0,False,True,True,0,0,0,0,True,
