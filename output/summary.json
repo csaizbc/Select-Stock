@@ -1,21 +1,21 @@
 {
-  "as_of_date": "20260724",
+  "as_of_date": "20260727",
   "data_date": "20260724",
   "chip_data_date": "20260724",
   "target_trade_date": "20260727",
-  "generated_at": "2026-07-24 22:04:50 北京时间",
-  "total_count": 5531,
+  "generated_at": "2026-07-27 15:06:28 北京时间",
+  "total_count": 5533,
   "default_passed_count": 4970,
-  "default_excluded_count": 561,
+  "default_excluded_count": 563,
   "board_counts": {
     "主板": 3191,
     "创业板": 1399,
-    "北交所": 330,
-    "科创板": 611
+    "北交所": 331,
+    "科创板": 612
   },
   "exchange_counts": {
-    "北交所": 330,
-    "沪市": 2309,
+    "北交所": 331,
+    "沪市": 2310,
     "深市": 2892
   },
   "default_passed_by_board": {
@@ -27,8 +27,8 @@
   "default_excluded_by_board": {
     "主板": 276,
     "创业板": 135,
-    "北交所": 89,
-    "科创板": 61
+    "北交所": 90,
+    "科创板": 62
   },
   "sw_l2_counts": {
     "IT服务Ⅱ": 132,
@@ -98,7 +98,7 @@
     "旅游零售Ⅱ": 2,
     "普钢": 23,
     "服装家纺": 60,
-    "未分类": 12,
+    "未分类": 14,
     "林业Ⅱ": 4,
     "橡胶": 23,
     "水泥": 21,
@@ -297,12 +297,12 @@
     "饲料": 18,
     "黑色家电": 9
   },
-  "unclassified_industry_count": 12,
+  "unclassified_industry_count": 14,
   "reject_reason_counts": {
     "近60日停牌": 228,
     "ST": 208,
-    "上市时间不足": 249,
-    "无最新行情": 5
+    "上市时间不足": 251,
+    "无最新行情": 7
   },
   "default_age_days": 730,
   "default_suspend_window": 60
