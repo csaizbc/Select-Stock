@@ -1,4 +1,4 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-002614.SZ,002614,002614,奥佳华,主板,深市,主板,801110.SI,家用电器,801117.SI,其他家电Ⅱ,其他家电Ⅱ,L,20110909,5436,14.88,4.62,1.094,13.043,False,True,True,0,0,0,0,True,
-300247.SZ,300247,300247,融捷健康,创业板,深市,创业板,801110.SI,家用电器,801117.SI,其他家电Ⅱ,其他家电Ⅱ,L,20110729,5478,15.0,3.77,1.072,26.316,False,True,True,0,0,0,0,True,
-603579.SH,603579,603579,荣泰健康,主板,沪市,主板,801110.SI,家用电器,801117.SI,其他家电Ⅱ,其他家电Ⅱ,L,20170111,3485,9.54,17.5,0.459,23.913,False,True,True,0,0,0,0,True,
+002614.SZ,002614,002614,奥佳华,主板,深市,主板,801110.SI,家用电器,801117.SI,其他家电Ⅱ,其他家电Ⅱ,L,20110909,5437,14.89,4.67,1.082,10.87,False,True,True,0,0,0,0,True,
+300247.SZ,300247,300247,融捷健康,创业板,深市,创业板,801110.SI,家用电器,801117.SI,其他家电Ⅱ,其他家电Ⅱ,L,20110729,5479,15.0,3.8,0.796,26.316,False,True,True,0,0,0,0,True,
+603579.SH,603579,603579,荣泰健康,主板,沪市,主板,801110.SI,家用电器,801117.SI,其他家电Ⅱ,其他家电Ⅱ,L,20170111,3486,9.54,17.49,-0.057,23.913,False,True,True,0,0,0,0,True,
