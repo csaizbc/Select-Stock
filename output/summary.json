@@ -1,9 +1,9 @@
 {
   "as_of_date": "20260804",
-  "data_date": "20260803",
-  "chip_data_date": "20260803",
-  "target_trade_date": "20260804",
-  "generated_at": "2026-08-04 15:41:50 北京时间",
+  "data_date": "20260804",
+  "chip_data_date": "20260804",
+  "target_trade_date": "20260805",
+  "generated_at": "2026-08-04 22:34:59 北京时间",
   "total_count": 5536,
   "default_passed_count": 4971,
   "default_excluded_count": 565,
