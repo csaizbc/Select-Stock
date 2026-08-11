@@ -1,4 +1,4 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000592.SZ,000592,000592,平潭发展,主板,深市,主板,801010.SI,农林牧渔,801011.SI,林业Ⅱ,林业Ⅱ,L,19960327,11093,30.37,6.71,2.599,14.062,False,True,True,0,0,0,0,True,
-000663.SZ,000663,000663,永安林业,主板,深市,主板,801010.SI,农林牧渔,801011.SI,林业Ⅱ,林业Ⅱ,L,19961206,10839,29.68,5.6,4.089,16.0,False,True,True,0,0,0,0,True,
-002679.SZ,002679,002679,福建金森,主板,深市,主板,801010.SI,农林牧渔,801011.SI,林业Ⅱ,林业Ⅱ,L,20120605,5179,14.18,9.0,2.623,28.571,False,True,True,0,0,0,0,True,
+000592.SZ,000592,000592,平潭发展,主板,深市,主板,801010.SI,农林牧渔,801011.SI,林业Ⅱ,林业Ⅱ,L,19960327,11094,30.37,6.69,-0.298,14.062,False,True,True,0,0,0,0,True,
+000663.SZ,000663,000663,永安林业,主板,深市,主板,801010.SI,农林牧渔,801011.SI,林业Ⅱ,林业Ⅱ,L,19961206,10840,29.68,5.58,-0.357,17.647,False,True,True,0,0,0,0,True,
+002679.SZ,002679,002679,福建金森,主板,深市,主板,801010.SI,农林牧渔,801011.SI,林业Ⅱ,林业Ⅱ,L,20120605,5180,14.18,9.06,0.667,28.571,False,True,True,0,0,0,0,True,
