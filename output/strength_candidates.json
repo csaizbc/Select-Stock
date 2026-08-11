@@ -1,11 +1,11 @@
 {
   "meta": {
-    "as_of_date": "20260810",
+    "as_of_date": "20260811",
     "data_date": "20260810",
     "chip_data_date": "20260810",
     "target_trade_date": "20260811",
-    "generated_at": "2026-08-10 21:35:37 北京时间",
-    "row_count": 5539,
+    "generated_at": "2026-08-11 15:43:35 北京时间",
+    "row_count": 5542,
     "suspend_windows": [
       20,
       40,
@@ -918,7 +918,7 @@
       "revenue_yoy": 14.65,
       "debt_to_assets": 31.65,
       "report_period": "20260331",
-      "name": "青松股份",
+      "name": "诺斯贝尔",
       "board": "创业板",
       "industry": "化妆品"
     },

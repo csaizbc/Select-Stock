@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 002094.SZ,002094,002094,青岛金王,主板,深市,主板,801980.SI,美容护理,801982.SI,化妆品,化妆品,L,20061215,7178,19.65,4.82,1.903,11.111,False,True,True,0,0,0,0,True,
-300132.SZ,300132,300132,青松股份,创业板,深市,创业板,801980.SI,美容护理,801982.SI,化妆品,化妆品,L,20101026,5767,15.79,6.83,4.915,9.375,False,True,True,0,0,0,0,True,
+300132.SZ,300132,300132,诺斯贝尔,创业板,深市,创业板,801980.SI,美容护理,801982.SI,化妆品,化妆品,L,20101026,5767,15.79,6.83,4.915,9.375,False,True,True,0,0,0,0,True,
 300740.SZ,300740,300740,水羊股份,创业板,深市,创业板,801980.SI,美容护理,801982.SI,化妆品,化妆品,L,20180208,3105,8.5,22.23,3.155,14.563,False,True,True,0,0,0,0,True,
 300849.SZ,300849,300849,锦盛新材,创业板,深市,创业板,801980.SI,美容护理,801982.SI,化妆品,化妆品,L,20200710,2222,6.08,22.0,-2.913,26.852,False,True,True,0,0,0,0,True,
 300856.SZ,300856,300856,科思股份,创业板,深市,创业板,801980.SI,美容护理,801982.SI,化妆品,化妆品,L,20200722,2210,6.05,11.14,1.921,28.571,False,True,True,0,0,0,0,True,
