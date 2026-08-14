@@ -2,22 +2,22 @@
   "method": "信号日收盘买入，持有至第1/3/5个交易日收盘；未计手续费、滑点及涨跌停成交限制",
   "samples": {
     "1d": {
-      "count": 4813,
-      "avg_return": -0.281,
-      "win_rate": 47.18,
-      "median_return": -0.108
+      "count": 5013,
+      "avg_return": -0.294,
+      "win_rate": 46.7,
+      "median_return": -0.143
     },
     "3d": {
-      "count": 4413,
-      "avg_return": -0.583,
-      "win_rate": 44.19,
-      "median_return": -0.52
+      "count": 4613,
+      "avg_return": -0.575,
+      "win_rate": 43.77,
+      "median_return": -0.57
     },
     "5d": {
-      "count": 4012,
-      "avg_return": -1.257,
-      "win_rate": 41.95,
-      "median_return": -0.726
+      "count": 4213,
+      "avg_return": -1.223,
+      "win_rate": 41.75,
+      "median_return": -0.761
     }
   }
 }
