@@ -1,11 +1,11 @@
 {
   "meta": {
-    "as_of_date": "20260817",
+    "as_of_date": "20260818",
     "data_date": "20260817",
     "chip_data_date": "20260817",
     "target_trade_date": "20260818",
-    "generated_at": "2026-08-17 21:00:43 北京时间",
-    "row_count": 5544,
+    "generated_at": "2026-08-18 15:28:50 北京时间",
+    "row_count": 5545,
     "suspend_windows": [
       20,
       40,
@@ -8163,7 +8163,7 @@
       "revenue_yoy": 83.68,
       "debt_to_assets": 54.85,
       "report_period": "20260331",
-      "name": "宁波富邦",
+      "name": "富邦新材",
       "board": "主板",
       "industry": "工业金属"
     },
