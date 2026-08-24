@@ -1,10 +1,10 @@
 {
   "meta": {
-    "as_of_date": "20260821",
+    "as_of_date": "20260824",
     "data_date": "20260821",
     "chip_data_date": "20260821",
     "target_trade_date": "20260824",
-    "generated_at": "2026-08-21 21:03:59 北京时间",
+    "generated_at": "2026-08-24 15:20:46 北京时间",
     "row_count": 5549,
     "suspend_windows": [
       20,
@@ -147910,7 +147910,7 @@
       "ts_code": "920093.BJ",
       "symbol": "920093",
       "display_code": "920093",
-      "name": "N信胜",
+      "name": "信胜科技",
       "board": "北交所",
       "exchange": "北交所",
       "market_raw": "北交所",
