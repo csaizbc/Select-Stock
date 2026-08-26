@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000709.SZ,000709,000709,河钢股份,主板,深市,主板,801040.SI,钢铁,801044.SI,普钢,普钢,L,19970416,10723,29.36,2.11,0.476,14.286,False,True,True,0,0,0,0,True,
-000717.SZ,000717,000717,中南股份,主板,深市,主板,801040.SI,钢铁,801044.SI,普钢,普钢,L,19970508,10701,29.3,2.29,3.62,,False,True,True,0,0,0,0,True,
+000717.SZ,000717,000717,中南股份,主板,深市,主板,801040.SI,钢铁,801044.SI,普钢,普钢,L,19970508,10701,29.3,2.29,3.62,22.727,False,True,True,0,0,0,0,True,
 000761.SZ,000761,000761,本钢板材,主板,深市,主板,801040.SI,钢铁,801044.SI,普钢,普钢,L,19980115,10449,28.61,2.39,3.017,51.724,False,True,True,0,0,0,0,True,
 000778.SZ,000778,000778,新兴铸管,主板,深市,主板,801040.SI,钢铁,801044.SI,普钢,普钢,L,19970606,10672,29.22,3.64,-2.151,18.421,False,True,True,0,0,0,0,True,
 000898.SZ,000898,000898,鞍钢股份,主板,深市,主板,801040.SI,钢铁,801044.SI,普钢,普钢,L,19971225,10470,28.67,2.02,1.0,36.364,False,True,True,0,0,0,0,True,

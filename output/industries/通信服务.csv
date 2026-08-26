@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000839.SZ,000839,000839,国安股份,主板,深市,主板,801770.SI,通信,801223.SI,通信服务,通信服务,L,19971031,10525,28.82,2.73,0.368,14.286,False,True,True,0,0,0,0,True,
-000889.SZ,000889,000889,中嘉博创,主板,深市,主板,801770.SI,通信,801223.SI,通信服务,通信服务,L,19971218,10477,28.68,4.01,3.085,,False,True,True,0,0,0,0,True,
+000889.SZ,000889,000889,中嘉博创,主板,深市,主板,801770.SI,通信,801223.SI,通信服务,通信服务,L,19971218,10477,28.68,4.01,3.085,7.692,False,True,True,0,0,0,0,True,
 002115.SZ,002115,002115,三维通信,主板,深市,主板,801770.SI,通信,801223.SI,通信服务,通信服务,L,20070215,7131,19.52,10.69,-1.202,13.761,False,True,True,0,0,0,0,True,
 002123.SZ,002123,002123,梦网科技,主板,深市,主板,801770.SI,通信,801223.SI,通信服务,通信服务,L,20070328,7090,19.41,7.88,2.338,10.843,False,True,True,0,0,0,0,True,
 002148.SZ,002148,002148,北纬科技,主板,深市,主板,801770.SI,通信,801223.SI,通信服务,通信服务,L,20070810,6955,19.04,6.27,3.125,9.524,False,True,True,0,0,0,0,True,

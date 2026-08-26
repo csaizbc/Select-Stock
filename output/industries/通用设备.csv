@@ -1,5 +1,5 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000039.SZ,000039,000039,中集集团,主板,深市,主板,801890.SI,机械设备,801072.SI,通用设备,通用设备,L,19940408,11827,32.38,9.1,-1.622,,False,True,True,0,0,0,0,True,
+000039.SZ,000039,000039,中集集团,主板,深市,主板,801890.SI,机械设备,801072.SI,通用设备,通用设备,L,19940408,11827,32.38,9.1,-1.622,17.045,False,True,True,0,0,0,0,True,
 000410.SZ,000410,000410,沈阳机床,主板,深市,主板,801890.SI,机械设备,801072.SI,通用设备,通用设备,L,19960718,10995,30.1,5.13,1.786,23.077,False,True,True,0,0,0,0,True,
 000530.SZ,000530,000530,冰山冷热,主板,深市,主板,801890.SI,机械设备,801072.SI,通用设备,通用设备,L,19931208,11948,32.71,5.17,3.607,10.204,False,True,True,0,0,0,0,True,
 000777.SZ,000777,000777,中核科技,主板,深市,主板,801890.SI,机械设备,801072.SI,通用设备,通用设备,L,19970710,10638,29.13,17.33,2.788,10.345,False,True,True,0,0,0,0,True,

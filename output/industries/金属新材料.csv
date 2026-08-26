@@ -1,5 +1,5 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000633.SZ,000633,000633,合金投资,主板,深市,主板,801050.SI,有色金属,801051.SI,金属新材料,金属新材料,L,19961112,10878,29.78,5.37,1.512,,False,True,True,0,0,0,0,True,
+000633.SZ,000633,000633,合金投资,主板,深市,主板,801050.SI,有色金属,801051.SI,金属新材料,金属新材料,L,19961112,10878,29.78,5.37,1.512,11.765,False,True,True,0,0,0,0,True,
 000795.SZ,000795,000795,英洛华,主板,深市,主板,801050.SI,有色金属,801051.SI,金属新材料,金属新材料,L,19970808,10609,29.05,9.02,5.374,13.793,False,True,True,0,0,0,0,True,
 000969.SZ,000969,000969,安泰科技,主板,深市,主板,801050.SI,有色金属,801051.SI,金属新材料,金属新材料,L,20000529,9584,26.24,16.63,0.666,10.714,False,True,True,0,0,0,0,True,
 000970.SZ,000970,000970,中科三环,主板,深市,主板,801050.SI,有色金属,801051.SI,金属新材料,金属新材料,L,20000420,9623,26.35,12.13,0.331,9.091,False,True,True,0,0,0,0,True,

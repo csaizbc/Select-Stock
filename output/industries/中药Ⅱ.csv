@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000423.SZ,000423,000423,东阿阿胶,主板,深市,主板,801150.SI,医药生物,801155.SI,中药Ⅱ,中药Ⅱ,L,19960729,10984,30.07,48.89,1.854,13.889,False,True,True,0,0,0,0,True,
-000538.SZ,000538,000538,云南白药,主板,深市,主板,801150.SI,医药生物,801155.SI,中药Ⅱ,中药Ⅱ,L,19931215,11941,32.69,50.0,1.01,,False,True,True,0,0,0,0,True,
+000538.SZ,000538,000538,云南白药,主板,深市,主板,801150.SI,医药生物,801155.SI,中药Ⅱ,中药Ⅱ,L,19931215,11941,32.69,50.0,1.01,10.959,False,True,True,0,0,0,0,True,
 000590.SZ,000590,000590,古汉医药,主板,深市,主板,801150.SI,医药生物,801155.SI,中药Ⅱ,中药Ⅱ,L,19960119,11176,30.6,9.41,3.978,17.778,False,True,True,0,0,0,0,True,
 000623.SZ,000623,000623,吉林敖东,主板,深市,主板,801150.SI,医药生物,801155.SI,中药Ⅱ,中药Ⅱ,L,19961028,10893,29.82,18.06,0.445,4.444,False,True,True,0,0,0,0,True,
 000650.SZ,000650,000650,仁和药业,主板,深市,主板,801150.SI,医药生物,801155.SI,中药Ⅱ,中药Ⅱ,L,19961210,10850,29.71,5.49,2.809,5.556,False,True,True,0,0,0,0,True,

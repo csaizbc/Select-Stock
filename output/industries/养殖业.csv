@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000048.SZ,000048,000048,京基智农,主板,深市,主板,801010.SI,农林牧渔,801017.SI,养殖业,养殖业,L,19941101,11620,31.81,21.5,-2.715,22.018,False,True,True,0,0,0,0,True,
-000735.SZ,000735,000735,罗牛山,主板,深市,主板,801010.SI,农林牧渔,801017.SI,养殖业,养殖业,L,19970611,10667,29.2,5.49,3.196,,False,True,True,0,0,0,0,True,
+000735.SZ,000735,000735,罗牛山,主板,深市,主板,801010.SI,农林牧渔,801017.SI,养殖业,养殖业,L,19970611,10667,29.2,5.49,3.196,14.545,False,True,True,0,0,0,0,True,
 000876.SZ,000876,000876,新希望,主板,深市,主板,801010.SI,农林牧渔,801017.SI,养殖业,养殖业,L,19980311,10394,28.46,7.03,2.478,29.412,False,True,True,0,0,0,0,True,
 001201.SZ,001201,001201,东瑞股份,主板,深市,主板,801010.SI,农林牧渔,801017.SI,养殖业,养殖业,L,20210428,1945,5.33,12.05,2.032,10.345,False,True,True,0,0,0,0,True,
 002124.SZ,002124,002124,天邦食品,主板,深市,主板,801010.SI,农林牧渔,801017.SI,养殖业,养殖业,L,20070403,7084,19.39,2.28,1.786,8.696,False,True,True,0,0,0,0,True,

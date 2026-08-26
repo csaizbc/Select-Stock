@@ -1,5 +1,5 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000028.SZ,000028,000028,国药一致,主板,深市,主板,801150.SI,医药生物,801154.SI,医药商业,医药商业,L,19930809,12069,33.04,19.87,1.429,,False,True,True,0,0,0,0,True,
+000028.SZ,000028,000028,国药一致,主板,深市,主板,801150.SI,医药生物,801154.SI,医药商业,医药商业,L,19930809,12069,33.04,19.87,1.429,14.706,False,True,True,0,0,0,0,True,
 000411.SZ,000411,000411,英特集团,主板,深市,主板,801150.SI,医药生物,801154.SI,医药商业,医药商业,L,19960716,10997,30.11,9.84,2.714,21.875,False,True,True,0,0,0,0,True,
 000705.SZ,000705,000705,浙江震元,主板,深市,主板,801150.SI,医药生物,801154.SI,医药商业,医药商业,L,19970410,10729,29.37,7.21,4.04,13.235,False,True,True,0,0,0,0,True,
 000950.SZ,000950,000950,重药控股,主板,深市,主板,801150.SI,医药生物,801154.SI,医药商业,医药商业,L,19990916,9840,26.94,5.58,3.142,12.5,False,True,True,0,0,0,0,True,

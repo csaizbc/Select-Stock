@@ -1,5 +1,5 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000498.SZ,000498,000498,山东路桥,主板,深市,主板,801720.SI,建筑装饰,801723.SI,基础建设,基础建设,L,19970609,10669,29.21,5.0,0.402,,False,True,True,0,0,0,0,True,
+000498.SZ,000498,000498,山东路桥,主板,深市,主板,801720.SI,建筑装饰,801723.SI,基础建设,基础建设,L,19970609,10669,29.21,5.0,0.402,17.647,False,True,True,0,0,0,0,True,
 001267.SZ,001267,001267,汇绿生态,主板,深市,主板,801720.SI,建筑装饰,801723.SI,基础建设,基础建设,L,20211117,1742,4.77,38.14,-2.555,12.121,False,True,True,0,0,0,0,True,
 002061.SZ,002061,002061,浙江交科,主板,深市,主板,801720.SI,建筑装饰,801723.SI,基础建设,基础建设,L,20060816,7314,20.02,3.53,1.729,11.111,False,True,True,0,0,0,0,True,
 002062.SZ,002062,002062,宏润建设,主板,深市,主板,801720.SI,建筑装饰,801723.SI,基础建设,基础建设,L,20060816,7314,20.02,8.05,3.338,15.584,False,True,True,0,0,0,0,True,

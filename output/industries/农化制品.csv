@@ -1,7 +1,7 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000422.SZ,000422,000422,湖北宜化,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19960815,10967,30.03,12.32,0.326,6.977,False,True,True,0,0,0,0,True,
 000525.SZ,000525,000525,红太阳,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19931028,11989,32.82,4.39,1.856,13.043,False,True,True,0,0,0,0,True,
-000553.SZ,000553,000553,安道麦A,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19931203,11953,32.73,5.48,0.366,,False,True,True,0,0,0,0,True,
+000553.SZ,000553,000553,安道麦A,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19931203,11953,32.73,5.48,0.366,30.0,False,True,True,0,0,0,0,True,
 000731.SZ,000731,000731,四川美丰,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19970617,10661,29.19,6.17,-0.644,10.169,False,True,True,0,0,0,0,True,
 000792.SZ,000792,000792,盐湖股份,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19970904,10582,28.97,27.45,-3.617,19.718,False,True,True,0,0,0,0,True,
 000893.SZ,000893,000893,亚钾国际,主板,深市,主板,801030.SI,基础化工,801038.SI,农化制品,农化制品,L,19981224,10106,27.67,46.38,-0.322,15.126,False,True,True,0,0,0,0,True,

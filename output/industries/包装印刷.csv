@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000659.SZ,000659,000659,珠海中富,主板,深市,主板,801140.SI,轻工制造,801141.SI,包装印刷,包装印刷,L,19961203,10857,29.72,2.85,10.039,14.815,False,True,True,0,0,0,0,True,
-000812.SZ,000812,000812,陕西金叶,主板,深市,主板,801140.SI,轻工制造,801141.SI,包装印刷,包装印刷,L,19980623,10290,28.17,3.63,2.542,,False,True,True,0,0,0,0,True,
+000812.SZ,000812,000812,陕西金叶,主板,深市,主板,801140.SI,轻工制造,801141.SI,包装印刷,包装印刷,L,19980623,10290,28.17,3.63,2.542,11.429,False,True,True,0,0,0,0,True,
 002014.SZ,002014,002014,永新股份,主板,深市,主板,801140.SI,轻工制造,801141.SI,包装印刷,包装印刷,L,20040708,8083,22.13,11.15,1.734,11.818,False,True,True,0,0,0,0,True,
 002117.SZ,002117,002117,东港股份,主板,深市,主板,801140.SI,轻工制造,801141.SI,包装印刷,包装印刷,L,20070302,7116,19.48,8.19,0.738,22.5,False,True,True,0,0,0,0,True,
 002191.SZ,002191,002191,劲嘉股份,主板,深市,主板,801140.SI,轻工制造,801141.SI,包装印刷,包装印刷,L,20071205,6838,18.72,3.7,1.928,10.526,False,True,True,0,0,0,0,True,

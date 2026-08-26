@@ -1,6 +1,6 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
 000017.SZ,000017,000017,深中华A,主板,深市,主板,801130.SI,纺织服饰,801133.SI,饰品,饰品,L,19920331,12565,34.4,8.6,9.974,43.548,False,True,True,0,0,0,0,True,
-000026.SZ,000026,000026,飞亚达,主板,深市,主板,801130.SI,纺织服饰,801133.SI,饰品,饰品,L,19930603,12136,33.23,20.25,2.74,,False,True,True,0,0,0,0,True,
+000026.SZ,000026,000026,飞亚达,主板,深市,主板,801130.SI,纺织服饰,801133.SI,饰品,饰品,L,19930603,12136,33.23,20.25,2.74,25.0,False,True,True,0,0,0,0,True,
 002345.SZ,002345,002345,潮宏基,主板,深市,主板,801130.SI,纺织服饰,801133.SI,饰品,饰品,L,20100128,6053,16.57,9.55,-0.831,12.621,False,True,True,0,0,0,0,True,
 002574.SZ,002574,002574,明牌珠宝,主板,深市,主板,801130.SI,纺织服饰,801133.SI,饰品,饰品,L,20110422,5604,15.34,4.99,4.612,19.565,False,True,True,0,0,0,0,True,
 002721.SZ,002721,002721,金一文化,主板,深市,主板,801130.SI,纺织服饰,801133.SI,饰品,饰品,L,20140127,4593,12.57,2.8,-1.754,14.286,False,True,True,0,0,0,0,True,

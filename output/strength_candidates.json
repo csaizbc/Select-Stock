@@ -1,10 +1,10 @@
 {
   "meta": {
-    "as_of_date": "20260825",
+    "as_of_date": "20260826",
     "data_date": "20260825",
     "chip_data_date": "20260825",
     "target_trade_date": "20260826",
-    "generated_at": "2026-08-25 21:04:25 北京时间",
+    "generated_at": "2026-08-26 15:47:56 北京时间",
     "row_count": 5550,
     "suspend_windows": [
       20,
@@ -5515,6 +5515,48 @@
       "industry": "工业金属"
     },
     {
+      "ts_code": "000008.SZ",
+      "score": 85.8,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 2.51,
+      "pct_chg": 2.45,
+      "ret5": 3.72,
+      "ret10": 2.87,
+      "ret20": 6.81,
+      "ma5": 2.44,
+      "ma10": 2.43,
+      "ma20": 2.42,
+      "distance_high20": -1.18,
+      "volume_ratio": 1.09,
+      "close_position": 85.7,
+      "amount_yi": 1.34,
+      "high60": 2.86,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 5.5,
+        "突破": 10,
+        "量价": 8,
+        "流动性": 10,
+        "低价": 10,
+        "收盘质量": 4.3,
+        "风险扣分": 0,
+        "筹码集中": 8,
+        "基本面": 5
+      },
+      "chip_concentration_70": 16.667,
+      "roe": -1.4,
+      "netprofit_yoy": 28.68,
+      "revenue_yoy": 8.07,
+      "debt_to_assets": 73.17,
+      "report_period": "20260331",
+      "name": "神州高铁",
+      "board": "主板",
+      "industry": "轨交设备Ⅱ"
+    },
+    {
       "ts_code": "000530.SZ",
       "score": 85.6,
       "patterns": [
@@ -8605,48 +8647,6 @@
       "name": "三晖电气",
       "board": "主板",
       "industry": "电网设备"
-    },
-    {
-      "ts_code": "002976.SZ",
-      "score": 81.4,
-      "patterns": [
-        "平台突破"
-      ],
-      "risk_flags": [],
-      "close": 24.69,
-      "pct_chg": 6.56,
-      "ret5": 4.8,
-      "ret10": 7.44,
-      "ret20": 29.33,
-      "ma5": 23.13,
-      "ma10": 23.26,
-      "ma20": 21.99,
-      "distance_high20": 1.35,
-      "volume_ratio": 1.65,
-      "close_position": 94.3,
-      "amount_yi": 2.27,
-      "high60": 38.34,
-      "score_detail": {
-        "趋势": 15,
-        "动量": 12.7,
-        "突破": 15,
-        "量价": 15,
-        "流动性": 10,
-        "低价": 0,
-        "收盘质量": 4.7,
-        "风险扣分": 0,
-        "筹码集中": 8,
-        "基本面": 1
-      },
-      "chip_concentration_70": 18.261,
-      "roe": -0.95,
-      "netprofit_yoy": -206.91,
-      "revenue_yoy": -19.03,
-      "debt_to_assets": 46.61,
-      "report_period": "20260331",
-      "name": "瑞玛精密",
-      "board": "主板",
-      "industry": "汽车零部件"
     }
   ]
 }
