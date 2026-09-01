@@ -1,12 +1,12 @@
 {
-  "as_of_date": "20260901",
-  "data_date": "20260831",
-  "chip_data_date": "20260831",
-  "target_trade_date": "20260901",
-  "generated_at": "2026-09-01 15:39:06 北京时间",
+  "as_of_date": "20260902",
+  "data_date": "20260901",
+  "chip_data_date": "20260901",
+  "target_trade_date": "20260902",
+  "generated_at": "2026-09-02 00:31:15 北京时间",
   "total_count": 5553,
-  "default_passed_count": 4998,
-  "default_excluded_count": 555,
+  "default_passed_count": 4997,
+  "default_excluded_count": 556,
   "board_counts": {
     "主板": 3194,
     "创业板": 1404,
@@ -19,13 +19,13 @@
     "深市": 2898
   },
   "default_passed_by_board": {
-    "主板": 2930,
+    "主板": 2929,
     "创业板": 1273,
     "北交所": 244,
     "科创板": 551
   },
   "default_excluded_by_board": {
-    "主板": 264,
+    "主板": 265,
     "创业板": 131,
     "北交所": 95,
     "科创板": 65
@@ -236,7 +236,7 @@
     "橡胶": 20,
     "水泥": 20,
     "汽车服务": 11,
-    "汽车零部件": 232,
+    "汽车零部件": 231,
     "油服工程": 11,
     "油气开采Ⅱ": 2,
     "消费电子": 91,
@@ -299,10 +299,10 @@
   },
   "unclassified_industry_count": 35,
   "reject_reason_counts": {
-    "近60日停牌": 124,
+    "近60日停牌": 125,
     "ST": 203,
-    "无最新行情": 8,
-    "上市时间不足": 261
+    "上市时间不足": 261,
+    "无最新行情": 7
   },
   "default_age_days": 730,
   "default_suspend_window": 60
