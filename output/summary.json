@@ -1,12 +1,12 @@
 {
-  "as_of_date": "20260910",
-  "data_date": "20260909",
-  "chip_data_date": "20260909",
-  "target_trade_date": "20260910",
-  "generated_at": "2026-09-10 15:20:23 北京时间",
+  "as_of_date": "20260911",
+  "data_date": "20260910",
+  "chip_data_date": "20260910",
+  "target_trade_date": "20260911",
+  "generated_at": "2026-09-11 00:18:12 北京时间",
   "total_count": 5561,
-  "default_passed_count": 5008,
-  "default_excluded_count": 553,
+  "default_passed_count": 5007,
+  "default_excluded_count": 554,
   "board_counts": {
     "主板": 3195,
     "创业板": 1407,
@@ -20,13 +20,13 @@
   },
   "default_passed_by_board": {
     "主板": 2935,
-    "创业板": 1278,
+    "创业板": 1277,
     "北交所": 244,
     "科创板": 551
   },
   "default_excluded_by_board": {
     "主板": 260,
-    "创业板": 129,
+    "创业板": 130,
     "北交所": 99,
     "科创板": 65
   },
@@ -217,7 +217,7 @@
     "小家电": 21,
     "小金属": 22,
     "工业金属": 59,
-    "工程咨询服务Ⅱ": 44,
+    "工程咨询服务Ⅱ": 43,
     "工程机械": 32,
     "广告营销": 25,
     "影视院线": 17,
@@ -299,9 +299,9 @@
   },
   "unclassified_industry_count": 43,
   "reject_reason_counts": {
-    "近60日停牌": 114,
+    "近60日停牌": 115,
     "ST": 204,
-    "无最新行情": 11,
+    "无最新行情": 12,
     "上市时间不足": 266
   },
   "default_age_days": 730,
