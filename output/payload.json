@@ -1,10 +1,10 @@
 {
   "meta": {
-    "as_of_date": "20260912",
+    "as_of_date": "20260914",
     "data_date": "20260911",
     "chip_data_date": "20260911",
     "target_trade_date": "20260914",
-    "generated_at": "2026-09-12 00:21:59 北京时间",
+    "generated_at": "2026-09-14 15:19:33 北京时间",
     "row_count": 5562,
     "suspend_windows": [
       20,
@@ -118034,7 +118034,7 @@
       "ts_code": "603448.SH",
       "symbol": "603448",
       "display_code": "603448",
-      "name": "C天博",
+      "name": "天博智能",
       "board": "主板",
       "exchange": "沪市",
       "market_raw": "主板",
@@ -145726,7 +145726,7 @@
       "ts_code": "688801.SH",
       "symbol": "688801",
       "display_code": "688801",
-      "name": "N燧原",
+      "name": "C燧原",
       "board": "科创板",
       "exchange": "沪市",
       "market_raw": "科创板",
