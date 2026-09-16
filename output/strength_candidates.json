@@ -4,8 +4,8 @@
     "data_date": "20260915",
     "chip_data_date": "20260915",
     "target_trade_date": "20260916",
-    "generated_at": "2026-09-16 00:50:25 北京时间",
-    "row_count": 5562,
+    "generated_at": "2026-09-16 15:19:34 北京时间",
+    "row_count": 5564,
     "suspend_windows": [
       20,
       40,
@@ -4464,7 +4464,7 @@
         "筹码集中": 8,
         "基本面": 5
       },
-      "chip_concentration_70": 17.978,
+      "chip_concentration_70": 18.333,
       "roe": 3.89,
       "netprofit_yoy": -13.25,
       "revenue_yoy": 7.51,
@@ -5055,7 +5055,7 @@
         "筹码集中": 10,
         "基本面": 11
       },
-      "chip_concentration_70": 8.621,
+      "chip_concentration_70": 7.792,
       "roe": 6.56,
       "netprofit_yoy": 145.09,
       "revenue_yoy": 40.21,
@@ -6961,7 +6961,7 @@
         "筹码集中": 8,
         "基本面": 3
       },
-      "chip_concentration_70": 18.349,
+      "chip_concentration_70": 18.519,
       "roe": -3.08,
       "netprofit_yoy": -146.55,
       "revenue_yoy": -6.6,
