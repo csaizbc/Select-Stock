@@ -1,10 +1,10 @@
 {
   "meta": {
-    "as_of_date": "20260919",
+    "as_of_date": "20260921",
     "data_date": "20260918",
     "chip_data_date": "20260918",
     "target_trade_date": "20260921",
-    "generated_at": "2026-09-19 00:18:20 北京时间",
+    "generated_at": "2026-09-21 15:19:40 北京时间",
     "row_count": 5565,
     "suspend_windows": [
       20,
@@ -54909,7 +54909,7 @@
       "list_age_years": 10.54,
       "close": 445.0,
       "pct_chg": 4.869,
-      "chip_concentration_70": 9.804,
+      "chip_concentration_70": 10.084,
       "is_st": false,
       "is_normal_listed": true,
       "has_latest_quote": true,
@@ -159357,48 +159357,6 @@
       "industry": "半导体"
     },
     {
-      "ts_code": "300502.SZ",
-      "score": 98.8,
-      "patterns": [
-        "趋势强势"
-      ],
-      "risk_flags": [],
-      "close": 445.0,
-      "pct_chg": 4.87,
-      "ret5": 5.2,
-      "ret10": 15.28,
-      "ret20": 0.68,
-      "ma5": 418.39,
-      "ma10": 417.42,
-      "ma20": 407.81,
-      "distance_high20": -1.11,
-      "volume_ratio": 1.22,
-      "close_position": 67.8,
-      "amount_yi": 185.11,
-      "high60": 618.87,
-      "score_detail": {
-        "趋势": 25,
-        "动量": 10.4,
-        "突破": 10,
-        "量价": 15,
-        "流动性": 10,
-        "低价": 0,
-        "收盘质量": 3.4,
-        "风险扣分": 0,
-        "筹码集中": 10,
-        "基本面": 15
-      },
-      "chip_concentration_70": 9.804,
-      "roe": 35.67,
-      "netprofit_yoy": 90.98,
-      "revenue_yoy": 100.34,
-      "debt_to_assets": 33.24,
-      "report_period": "20260630",
-      "name": "新易盛",
-      "board": "创业板",
-      "industry": "通信设备"
-    },
-    {
       "ts_code": "603203.SH",
       "score": 98.8,
       "patterns": [
@@ -160076,6 +160034,48 @@
       "name": "通达创智",
       "board": "主板",
       "industry": "文娱用品"
+    },
+    {
+      "ts_code": "300502.SZ",
+      "score": 96.8,
+      "patterns": [
+        "趋势强势"
+      ],
+      "risk_flags": [],
+      "close": 445.0,
+      "pct_chg": 4.87,
+      "ret5": 5.2,
+      "ret10": 15.28,
+      "ret20": 0.68,
+      "ma5": 418.39,
+      "ma10": 417.42,
+      "ma20": 407.81,
+      "distance_high20": -1.11,
+      "volume_ratio": 1.22,
+      "close_position": 67.8,
+      "amount_yi": 185.11,
+      "high60": 618.87,
+      "score_detail": {
+        "趋势": 25,
+        "动量": 10.4,
+        "突破": 10,
+        "量价": 15,
+        "流动性": 10,
+        "低价": 0,
+        "收盘质量": 3.4,
+        "风险扣分": 0,
+        "筹码集中": 8,
+        "基本面": 15
+      },
+      "chip_concentration_70": 10.084,
+      "roe": 35.67,
+      "netprofit_yoy": 90.98,
+      "revenue_yoy": 100.34,
+      "debt_to_assets": 33.24,
+      "report_period": "20260630",
+      "name": "新易盛",
+      "board": "创业板",
+      "industry": "通信设备"
     },
     {
       "ts_code": "300179.SZ",
