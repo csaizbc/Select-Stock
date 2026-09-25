@@ -4,7 +4,7 @@
     "data_date": "20260924",
     "chip_data_date": "20260924",
     "target_trade_date": "20260928",
-    "generated_at": "2026-09-25 01:02:30 北京时间",
+    "generated_at": "2026-09-25 15:19:20 北京时间",
     "row_count": 5569,
     "suspend_windows": [
       20,
@@ -150122,7 +150122,7 @@
       "ts_code": "920201.BJ",
       "symbol": "920201",
       "display_code": "920201",
-      "name": "N百瑞吉",
+      "name": "百瑞吉",
       "board": "北交所",
       "exchange": "北交所",
       "market_raw": "北交所",
