@@ -1,10 +1,10 @@
 {
   "meta": {
-    "as_of_date": "20260926",
+    "as_of_date": "20260928",
     "data_date": "20260924",
     "chip_data_date": "20260924",
     "target_trade_date": "20260928",
-    "generated_at": "2026-09-26 01:03:31 北京时间",
+    "generated_at": "2026-09-28 15:19:45 北京时间",
     "row_count": 5569,
     "suspend_windows": [
       20,
@@ -44422,7 +44422,7 @@
       "ts_code": "300096.SZ",
       "symbol": "300096",
       "display_code": "300096",
-      "name": "ST易联众",
+      "name": "易联众",
       "board": "创业板",
       "exchange": "深市",
       "market_raw": "创业板",
@@ -44438,7 +44438,7 @@
       "close": null,
       "pct_chg": null,
       "chip_concentration_70": null,
-      "is_st": true,
+      "is_st": false,
       "is_normal_listed": true,
       "has_latest_quote": false,
       "suspend_days_20": 1,

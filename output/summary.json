@@ -1,9 +1,9 @@
 {
-  "as_of_date": "20260926",
+  "as_of_date": "20260928",
   "data_date": "20260924",
   "chip_data_date": "20260924",
   "target_trade_date": "20260928",
-  "generated_at": "2026-09-26 01:03:31 北京时间",
+  "generated_at": "2026-09-28 15:19:45 北京时间",
   "total_count": 5569,
   "default_passed_count": 5028,
   "default_excluded_count": 541,
@@ -300,7 +300,7 @@
   "unclassified_industry_count": 51,
   "reject_reason_counts": {
     "近60日停牌": 96,
-    "ST": 204,
+    "ST": 203,
     "无最新行情": 12,
     "上市时间不足": 271
   },
