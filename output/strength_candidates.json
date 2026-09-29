@@ -4,8 +4,8 @@
     "data_date": "20260928",
     "chip_data_date": "20260928",
     "target_trade_date": "20260929",
-    "generated_at": "2026-09-29 03:36:14 北京时间",
-    "row_count": 5569,
+    "generated_at": "2026-09-29 15:19:41 北京时间",
+    "row_count": 5571,
     "suspend_windows": [
       20,
       40,
@@ -6122,7 +6122,7 @@
       "revenue_yoy": 5.34,
       "debt_to_assets": 49.91,
       "report_period": "20260630",
-      "name": "通行宝",
+      "name": "苏交数智",
       "board": "创业板",
       "industry": "计算机设备"
     },
