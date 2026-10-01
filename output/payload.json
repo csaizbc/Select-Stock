@@ -4,7 +4,7 @@
     "data_date": "20260930",
     "chip_data_date": "20260930",
     "target_trade_date": "20261008",
-    "generated_at": "2026-10-01 01:58:03 北京时间",
+    "generated_at": "2026-10-01 15:19:34 北京时间",
     "row_count": 5572,
     "suspend_windows": [
       20,
@@ -12670,7 +12670,7 @@
       "ts_code": "001246.SZ",
       "symbol": "001246",
       "display_code": "001246",
-      "name": "N力勤资源",
+      "name": "力勤资源",
       "board": "主板",
       "exchange": "深市",
       "market_raw": "主板",
