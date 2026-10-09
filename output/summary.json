@@ -1,12 +1,12 @@
 {
-  "as_of_date": "20261009",
-  "data_date": "20261008",
-  "chip_data_date": "20261008",
-  "target_trade_date": "20261009",
-  "generated_at": "2026-10-09 15:19:40 北京时间",
+  "as_of_date": "20261010",
+  "data_date": "20261009",
+  "chip_data_date": "20261009",
+  "target_trade_date": "20261012",
+  "generated_at": "2026-10-10 02:18:12 北京时间",
   "total_count": 5573,
-  "default_passed_count": 5027,
-  "default_excluded_count": 546,
+  "default_passed_count": 5028,
+  "default_excluded_count": 545,
   "board_counts": {
     "主板": 3197,
     "创业板": 1409,
@@ -20,13 +20,13 @@
   },
   "default_passed_by_board": {
     "主板": 2943,
-    "创业板": 1281,
+    "创业板": 1282,
     "北交所": 247,
     "科创板": 556
   },
   "default_excluded_by_board": {
     "主板": 254,
-    "创业板": 128,
+    "创业板": 127,
     "北交所": 102,
     "科创板": 62
   },
@@ -246,7 +246,7 @@
     "焦炭Ⅱ": 7,
     "煤炭开采": 30,
     "照明设备Ⅱ": 14,
-    "燃气Ⅱ": 29,
+    "燃气Ⅱ": 30,
     "物流": 42,
     "特钢Ⅱ": 12,
     "环保设备Ⅱ": 26,
@@ -299,9 +299,9 @@
   },
   "unclassified_industry_count": 55,
   "reject_reason_counts": {
-    "近60日停牌": 105,
+    "近60日停牌": 104,
     "ST": 201,
-    "无最新行情": 16,
+    "无最新行情": 14,
     "上市时间不足": 271
   },
   "default_age_days": 730,
