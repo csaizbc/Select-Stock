@@ -1,9 +1,9 @@
 ﻿metric,value
-as_of_date,20261010
+as_of_date,20261012
 data_date,20261009
 chip_data_date,20261009
 target_trade_date,20261012
-generated_at,2026-10-10 02:18:12 北京时间
+generated_at,2026-10-12 15:19:47 北京时间
 total_count,5573
 default_passed_count,5028
 default_excluded_count,545
