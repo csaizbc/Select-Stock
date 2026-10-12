@@ -1,12 +1,12 @@
 {
-  "as_of_date": "20261012",
-  "data_date": "20261009",
-  "chip_data_date": "20261009",
-  "target_trade_date": "20261012",
-  "generated_at": "2026-10-12 15:19:47 北京时间",
+  "as_of_date": "20261013",
+  "data_date": "20261012",
+  "chip_data_date": "20261012",
+  "target_trade_date": "20261013",
+  "generated_at": "2026-10-13 05:13:12 北京时间",
   "total_count": 5573,
-  "default_passed_count": 5028,
-  "default_excluded_count": 545,
+  "default_passed_count": 5030,
+  "default_excluded_count": 543,
   "board_counts": {
     "主板": 3197,
     "创业板": 1409,
@@ -19,15 +19,15 @@
     "深市": 2904
   },
   "default_passed_by_board": {
-    "主板": 2943,
+    "主板": 2944,
     "创业板": 1282,
-    "北交所": 247,
+    "北交所": 248,
     "科创板": 556
   },
   "default_excluded_by_board": {
-    "主板": 254,
+    "主板": 253,
     "创业板": 127,
-    "北交所": 102,
+    "北交所": 101,
     "科创板": 62
   },
   "sw_l2_counts": {
@@ -167,7 +167,7 @@
   "default_passed_by_sw_l2": {
     "IT服务Ⅱ": 117,
     "一般零售": 58,
-    "专业工程": 35,
+    "专业工程": 36,
     "专业服务": 29,
     "专业连锁Ⅱ": 7,
     "专用设备": 177,
@@ -193,7 +193,7 @@
     "冶钢原料": 9,
     "出版": 26,
     "动物保健Ⅱ": 13,
-    "包装印刷": 44,
+    "包装印刷": 45,
     "化妆品": 14,
     "化学制品": 169,
     "化学制药": 149,
@@ -299,10 +299,10 @@
   },
   "unclassified_industry_count": 55,
   "reject_reason_counts": {
-    "近60日停牌": 104,
+    "近60日停牌": 103,
     "ST": 201,
-    "无最新行情": 14,
-    "上市时间不足": 271
+    "无最新行情": 12,
+    "上市时间不足": 269
   },
   "default_age_days": 730,
   "default_suspend_window": 60
