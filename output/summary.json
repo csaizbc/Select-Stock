@@ -1,9 +1,9 @@
 {
-  "as_of_date": "20261015",
-  "data_date": "20261014",
-  "chip_data_date": "20261014",
-  "target_trade_date": "20261015",
-  "generated_at": "2026-10-15 15:19:51 北京时间",
+  "as_of_date": "20261016",
+  "data_date": "20261015",
+  "chip_data_date": "20261015",
+  "target_trade_date": "20261016",
+  "generated_at": "2026-10-16 00:50:26 北京时间",
   "total_count": 5576,
   "default_passed_count": 5036,
   "default_excluded_count": 540,
@@ -300,8 +300,8 @@
   "unclassified_industry_count": 58,
   "reject_reason_counts": {
     "ST": 201,
-    "近60日停牌": 98,
-    "无最新行情": 13,
+    "近60日停牌": 99,
+    "无最新行情": 11,
     "上市时间不足": 272
   },
   "default_age_days": 730,
