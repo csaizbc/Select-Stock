@@ -1,12 +1,12 @@
 {
-  "as_of_date": "20261016",
-  "data_date": "20261015",
-  "chip_data_date": "20261015",
-  "target_trade_date": "20261016",
-  "generated_at": "2026-10-16 15:19:41 北京时间",
+  "as_of_date": "20261017",
+  "data_date": "20261016",
+  "chip_data_date": "20261016",
+  "target_trade_date": "20261019",
+  "generated_at": "2026-10-17 00:31:46 北京时间",
   "total_count": 5577,
-  "default_passed_count": 5036,
-  "default_excluded_count": 541,
+  "default_passed_count": 5038,
+  "default_excluded_count": 539,
   "board_counts": {
     "主板": 3197,
     "创业板": 1411,
@@ -20,13 +20,13 @@
   },
   "default_passed_by_board": {
     "主板": 2949,
-    "创业板": 1282,
+    "创业板": 1284,
     "北交所": 248,
     "科创板": 557
   },
   "default_excluded_by_board": {
     "主板": 248,
-    "创业板": 129,
+    "创业板": 127,
     "北交所": 103,
     "科创板": 61
   },
@@ -283,10 +283,10 @@
     "软件开发": 128,
     "通信服务": 35,
     "通信设备": 82,
-    "通用设备": 227,
+    "通用设备": 228,
     "造纸": 22,
     "酒店餐饮": 8,
-    "金属新材料": 28,
+    "金属新材料": 29,
     "铁路公路": 33,
     "非白酒": 12,
     "非金属材料Ⅱ": 12,
@@ -300,9 +300,9 @@
   "unclassified_industry_count": 59,
   "reject_reason_counts": {
     "ST": 201,
-    "近60日停牌": 99,
-    "无最新行情": 12,
-    "上市时间不足": 273
+    "近60日停牌": 98,
+    "无最新行情": 10,
+    "上市时间不足": 272
   },
   "default_age_days": 730,
   "default_suspend_window": 60
