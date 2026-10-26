@@ -1,10 +1,10 @@
 {
   "meta": {
-    "as_of_date": "20261024",
+    "as_of_date": "20261026",
     "data_date": "20261023",
     "chip_data_date": "20261023",
     "target_trade_date": "20261026",
-    "generated_at": "2026-10-24 00:57:14 北京时间",
+    "generated_at": "2026-10-26 15:19:42 北京时间",
     "row_count": 5577,
     "suspend_windows": [
       20,
@@ -151410,7 +151410,7 @@
       "ts_code": "920285.BJ",
       "symbol": "920285",
       "display_code": "920285",
-      "name": "N远大",
+      "name": "远大健科",
       "board": "北交所",
       "exchange": "北交所",
       "market_raw": "北交所",
