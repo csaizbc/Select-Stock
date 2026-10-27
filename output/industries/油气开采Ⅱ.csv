@@ -1,4 +1,4 @@
 ﻿ts_code,symbol,display_code,name,board,exchange,market_raw,sw_l1_code,sw_l1_name,sw_l2_code,sw_l2_name,sw_l2_display,list_status,list_date,list_age_days,list_age_years,close,pct_chg,chip_concentration_70,is_st,is_normal_listed,has_latest_quote,suspend_days_20,suspend_days_40,suspend_days_60,suspend_days_90,default_passed,default_reject_reasons
-000968.SZ,000968,000968,蓝焰控股,主板,深市,主板,801960.SI,石油石化,801961.SI,油气开采Ⅱ,油气开采Ⅱ,L,20000622,9622,26.34,6.75,2.118,8.696,False,True,True,0,0,0,0,True,
-600777.SH,600777,600777,新潮能源,主板,沪市,主板,801960.SI,石油石化,801961.SI,油气开采Ⅱ,油气开采Ⅱ,L,19961121,10931,29.93,4.31,0.937,33.333,False,True,True,0,0,0,2,True,
-600938.SH,600938,600938,中国海油,主板,沪市,主板,801960.SI,石油石化,801961.SI,油气开采Ⅱ,油气开采Ⅱ,L,20220421,1649,4.51,35.16,4.271,10.909,False,True,True,0,0,0,0,True,
+000968.SZ,000968,000968,蓝焰控股,主板,深市,主板,801960.SI,石油石化,801961.SI,油气开采Ⅱ,油气开采Ⅱ,L,20000622,9623,26.35,6.77,0.296,8.696,False,True,True,0,0,0,0,True,
+600777.SH,600777,600777,新潮能源,主板,沪市,主板,801960.SI,石油石化,801961.SI,油气开采Ⅱ,油气开采Ⅱ,L,19961121,10932,29.93,4.17,-3.248,33.333,False,True,True,0,0,0,2,True,
+600938.SH,600938,600938,中国海油,主板,沪市,主板,801960.SI,石油石化,801961.SI,油气开采Ⅱ,油气开采Ⅱ,L,20220421,1650,4.52,35.26,0.284,10.909,False,True,True,0,0,0,0,True,
