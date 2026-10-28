@@ -3,20 +3,20 @@
   "data_date": "20261027",
   "chip_data_date": "20261027",
   "target_trade_date": "20261028",
-  "generated_at": "2026-10-28 01:53:58 北京时间",
-  "total_count": 5577,
+  "generated_at": "2026-10-28 15:19:43 北京时间",
+  "total_count": 5576,
   "default_passed_count": 5042,
-  "default_excluded_count": 535,
+  "default_excluded_count": 534,
   "board_counts": {
     "主板": 3194,
-    "创业板": 1412,
+    "创业板": 1411,
     "北交所": 353,
     "科创板": 618
   },
   "exchange_counts": {
     "北交所": 353,
     "沪市": 2318,
-    "深市": 2906
+    "深市": 2905
   },
   "default_passed_by_board": {
     "主板": 2948,
@@ -26,7 +26,7 @@
   },
   "default_excluded_by_board": {
     "主板": 246,
-    "创业板": 124,
+    "创业板": 123,
     "北交所": 105,
     "科创板": 60
   },
@@ -148,7 +148,7 @@
     "贸易Ⅱ": 12,
     "轨交设备Ⅱ": 33,
     "软件开发": 135,
-    "通信服务": 39,
+    "通信服务": 38,
     "通信设备": 89,
     "通用设备": 246,
     "造纸": 24,
@@ -300,7 +300,7 @@
   "unclassified_industry_count": 62,
   "reject_reason_counts": {
     "ST": 197,
-    "近60日停牌": 96,
+    "近60日停牌": 95,
     "上市时间不足": 271,
     "无最新行情": 7
   },
